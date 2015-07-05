@@ -79,5 +79,4 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
-
 });
