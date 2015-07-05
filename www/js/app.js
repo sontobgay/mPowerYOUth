@@ -57,12 +57,22 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
         }
       }
     })
+
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
           controller: 'ChatDetailCtrl'
+        }
+      }
+    })
+
+    .state('tab.ufeeds', {
+      url: '/ufeeds',
+      views: {
+        'tab-ufeeds': {
+          templateUrl: 'templates/tab-ufeeds.html',
         }
       }
     })
