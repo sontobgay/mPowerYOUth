@@ -30,7 +30,7 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
@@ -38,11 +38,11 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.home', {
+    url: '/home',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
+      'home': {
+        templateUrl: 'templates/home.html',
         controller: 'DashCtrl'
       }
     }
@@ -71,23 +71,38 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
     .state('tab.ufeeds', {
       url: '/ufeeds',
       views: {
-        'tab-ufeeds': {
-          templateUrl: 'templates/tab-ufeeds.html',
+        'ufeeds': {
+          templateUrl: 'templates/ufeeds.html',
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.utilities', {
+    url: '/utilities',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'utilities': {
+        templateUrl: 'templates/utilities.html',
+        controller: 'UtilitiesCtrl'
       }
     }
-  });
+  })
+
+  .state('menu', {
+      abstract: true,
+      url: "/menu",
+      templateUrl: "templates/menu.html",
+    })
+
+    .state('menu.uxpress', {
+      url: "/uxpress",
+      views: {
+        'mainContent': {
+          templateUrl: "templates/uxpress.html"
+        }
+      }
+    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/home');
 
 });

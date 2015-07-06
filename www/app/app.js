@@ -36,6 +36,12 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
     templateUrl: "templates/tabs.html"
   })
 
+  .state('home', {
+      abstract: true,
+      url: "/home",
+      templateUrl: "app/home/home.html"
+    })
+
   // Each tab has its own nav history stack:
 
   .state('tab.dash', {
