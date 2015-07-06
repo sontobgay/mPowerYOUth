@@ -30,10 +30,10 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: "/tab",
+  .state('home', {
+    url: "/home",
     abstract: true,
-    templateUrl: "templates/tabs.html"
+    templateUrl: "app/home/home.html"
   })
 
   // Each tab has its own nav history stack:

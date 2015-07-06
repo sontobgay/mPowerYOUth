@@ -1,13 +1,26 @@
 <ion-nav-bar class="bar-balanced">
-    <h1 class="title">Elite Schedule</h1>
+    <h1 class="title">m-Power YOUth</h1>
 </ion-nav-bar>
 
-<ion-tabs class="tabs-energized tabs-icon-top">
-    <ion-tab title="Leagues" icon="ion-home" href="#/home/leagues">
-        <ion-nav-view name="tab-leagues"></ion-nav-view>
-    </ion-tab>
+<ion-tabs class="tabs-energized tabs-icon-top tabs-color-active-positive">
 
-    <ion-tab title="My Teams" icon="ion-star" ui-sref="home.myteams">
-        <ion-nav-view name="tab-myteams"></ion-nav-view>
-    </ion-tab>
+  <ion-tab title="Home" icon-off="ion-ios-home-outline" icon-on="ion-ios-home" href="#/home/uxpress">
+    <ion-nav-view name="home"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Chats Tab -->
+  <ion-tab title="UXpress" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" ui-sref="home.uxpress">
+    <ion-nav-view name="mainContent"></ion-nav-view>
+  </ion-tab>
+
+  <!-- Account Tab -->
+  <ion-tab title="UFeeds" icon-off="ion-social-twitter-outline" icon-on="ion-social-twitter" ui-sref="home.ufeeds">
+    <ion-nav-view name="ufeeds"></ion-nav-view>
+  </ion-tab>
+
+    <!-- Account Tab -->
+  <ion-tab title="Utilities" icon-off="ion-ios-cog-outline" icon-on="ion-ios-cog" ui-sref="home.utilities">
+    <ion-nav-view name="utilities"></ion-nav-view>
+  </ion-tab>
+
 </ion-tabs>
