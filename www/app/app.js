@@ -25,7 +25,7 @@ angular.module("mpoweryouth", ["ionic"])
     })
 
     .state('app', {
-      // abstract: true,
+      abstract: true,
       url: "/app",
       templateUrl: "app/layout/menu-layout.html"
     })
@@ -54,6 +54,15 @@ angular.module("mpoweryouth", ["ionic"])
       views: {
         "mainContent": {
           templateUrl: "app/utilities/utilities.html"
+        }
+      }
+    })
+
+    .state('app.counsellors', {
+      url: "/counsellors",
+      views: {
+        "mainContent": {
+          templateUrl: "app/uxpress/counsellors.html"
         }
       }
     });
