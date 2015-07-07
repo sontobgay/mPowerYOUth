@@ -62,4 +62,4 @@ angular.module('mpoweryouth.services', [])
         getStoredToken: getStoredToken,
         createTwitterSignature: createTwitterSignature
     };
-});
+})

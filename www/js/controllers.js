@@ -27,38 +27,38 @@ angular.module('mpoweryouth.controllers', [])
   };
 })
 
-// //This controller is for Twitter Feeds
-// .controller('AppCtrl', function($scope, $ionicPlatform, TwitterService) {
-//     // 1
-//     $scope.correctTimestring = function(string) {
-//         return new Date(Date.parse(string));
-//     };
-//     // 2
-//     $scope.showHomeTimeline = function() {
-//         $scope.home_timeline = TwitterService.getHomeTimeline();
-//     };
-//     // 3
-//     $scope.doRefresh = function() {
-//         $scope.showHomeTimeline();
-//         $scope.$broadcast('scroll.refreshComplete');
-//     };
-//     // 4
-//     $ionicPlatform.ready(function() {
-//         if (TwitterService.isAuthenticated()) {
-//             $scope.showHomeTimeline();
-//         } else {
-//             TwitterService.initialize().then(function(result) {
-//                 if(result === true) {
-//                     $scope.showHomeTimeline();
-//                 }
-//             });
-//         }
-//     });
-// });
-.controller('AppCtrl', function($scope, $ionicPlatform){
-  $ionicPlatform.ready(function() {
-    window.open(encodeURI('http://k-rudy.github.io/phonegap-twitter-timeline?613020326528573440'), '_blank', 'location=no');
-  });
-  
+//This controller is for Twitter Feeds
+.controller('AppCtrl', function($scope, $ionicPlatform, TwitterService) {
+    // 1
+    $scope.correctTimestring = function(string) {
+        return new Date(Date.parse(string));
+    };
+    // 2
+    $scope.showHomeTimeline = function() {
+        $scope.home_timeline = TwitterService.getHomeTimeline();
+    };
+    // 3
+    $scope.doRefresh = function() {
+        $scope.showHomeTimeline();
+        $scope.$broadcast('scroll.refreshComplete');
+    };
+    // 4
+    $ionicPlatform.ready(function() {
+        if (TwitterService.isAuthenticated()) {
+            $scope.showHomeTimeline();
+        } else {
+            TwitterService.initialize().then(function(result) {
+                if(result === true) {
+                    $scope.showHomeTimeline();
+                }
+            });
+        }
+    });
 })
+// .controller('AppCtrl', function($scope, $ionicPlatform){
+//   $ionicPlatform.ready(function() {
+//     window.open(encodeURI('http://k-rudy.github.io/phonegap-twitter-timeline?613020326528573440'), '_blank', 'location=no');
+//   });
+  
+// })
 

@@ -73,6 +73,7 @@ angular.module('mpoweryouth', ['ionic', 'mpoweryouth.controllers', 'mpoweryouth.
       views: {
         'ufeeds': {
           templateUrl: 'templates/ufeeds.html',
+          controller: 'AppCtrl'
         }
       }
     })
