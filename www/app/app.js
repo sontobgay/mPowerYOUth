@@ -19,98 +19,45 @@ angular.module("mpoweryouth", ["ionic"])
   $stateProvider
 
     .state('home', {
-      abstract: true,
+      // abstract: true,
       url: "/home",
       templateUrl: "app/home/home.html"
     })
 
-    .state('home.uxpress', {
-      url: "/uxpress",
-      views: {
-        "tab-uxpress": {
-          templateUrl: "app/home/uxpress.html"
-        }
-      }
-    })
-
-    .state('home.ufeeds', {
-      url: "/ufeeds",
-      views: {
-        "tab-ufeeds": {
-          templateUrl: "app/home/ufeeds.html"
-        }
-      }
-    })
-
-    .state('home.utilities', {
-      url: "/utilities",
-      views: {
-        "tab-utilities": {
-          templateUrl: "app/home/utilities.html"
-        }
-      }
-    })
-
     .state('app', {
-      abstract: true,
+      // abstract: true,
       url: "/app",
       templateUrl: "app/layout/menu-layout.html"
     })
 
-    .state('app.teams', {
-      url: "/teams",
+
+    .state('app.uxpress', {
+      url: "/uxpress",
       views: {
-        'mainContent': {
-          templateUrl: "app/teams/teams.html"
+        "mainContent": {
+          templateUrl: "app/uxpress/uxpress.html"
         }
       }
     })
 
-    .state('app.team-detail', {
-      url: "/teams/:id",
+    .state('app.ufeeds', {
+      url: "/ufeeds",
       views: {
-        'mainContent': {
-          templateUrl: "app/teams/team-detail.html"
+        "mainContent": {
+          templateUrl: "app/ufeeds/ufeeds.html"
         }
       }
     })
 
-    .state('app.game', {
-      url: "/game/:id",
+    .state('app.utilities', {
+      url: "/utilities",
       views: {
-        'mainContent': {
-          templateUrl: "app/game/game.html"
-        }
-      }
-    })
-
-    .state('app.standings', {
-      url: "/standings",
-      views: {
-        'mainContent': {
-          templateUrl: "app/standings/standings.html"
-        }
-      }
-    })
-
-    .state('app.locations', {
-      url: "/locations",
-      views: {
-        'mainContent': {
-          templateUrl: "app/locations/locations.html"
-        }
-      }
-    })
-
-    .state('app.rules', {
-      url: "/rules",
-      views: {
-        'mainContent': {
-          templateUrl: "app/rules/rules.html",
+        "mainContent": {
+          templateUrl: "app/utilities/utilities.html"
         }
       }
     });
 
     // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home/uxpress');
+  $urlRouterProvider.otherwise('/home');
 });
