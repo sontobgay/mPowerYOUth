@@ -40,6 +40,33 @@ angular.module("mpoweryouth", ["ionic"])
       }
     })
 
+    .state('app.feedback', {
+      url: "/feedback",
+      views: {
+        "mainContent": {
+          templateUrl: "app/uxpress/feedback.html"
+        }
+      }
+    })
+
+    .state('app.registration', {
+      url: "/registration",
+      views: {
+        "mainContent": {
+          templateUrl: "app/uxpress/registration.html"
+        }
+      }
+    })
+
+    .state('app.questionnaire', {
+      url: "/questionnaire",
+      views: {
+        "mainContent": {
+          templateUrl: "app/uxpress/questionnaire.html"
+        }
+      }
+    })
+
     .state('app.ufeeds', {
       url: "/ufeeds",
       views: {
@@ -62,7 +89,7 @@ angular.module("mpoweryouth", ["ionic"])
       url: "/counsellors",
       views: {
         "mainContent": {
-          templateUrl: "app/uxpress/counsellors.html"
+          templateUrl: "app/utilities/counsellors.html"
         }
       }
     });
