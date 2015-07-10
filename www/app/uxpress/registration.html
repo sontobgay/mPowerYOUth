@@ -4,34 +4,37 @@
 
 <ion-view class="app-content">
   <ion-content class="has-header">
+  
+  <form name="registrationForm" ng-submit="register()">
 
-  <div class="list">
+  <div class="list list-inset">
   <label class="item item-input item-floating-label">
     <span class="input-label">Name</span>
-    <input type="text" placeholder="First Name">
+    <input type="text" placeholder="Name" data-ng-model="name">
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Age</span>
-    <input type="text" placeholder="Last Name">
+    <input type="text" placeholder="Age" data-ng-model="age">
   </label>
    <label class="item item-input item-floating-label">
     <span class="input-label">Mobile Number</span>
-    <input type="text" placeholder="Last Name">
+    <input type="text" placeholder="Mobile Number" data-ng-model="mobile">
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Email Address</span>
-    <input type="text" placeholder="Email">
+    <input type="text" placeholder="Email Address" data-ng-model="email">
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Counselling Details</span>
-    <textarea placeholder="Counselling Details" height="20px"></textarea>
+    <textarea placeholder="Counselling Details" data-ng-model="details"></textarea>
   </label>
 
-	<div class="button-bar button-assertive button-block">
-	  <a class="button">Submit</a>
-	  <a class="button" ui-sref="app.uxpress">Cancel</a>
-	</div>
+	<div class="button-bar">
+	  <button class="button button-balanced button-block icon-left ion-ios-download" type="submit">Submit</button>
+	  <a class="button button-assertive button-block icon-left ion-ios-close" ui-sref="app.uxpress">Cancel</a>
+	</div> 
 </div>
+</form>
 
   </ion-content>
 </ion-view>

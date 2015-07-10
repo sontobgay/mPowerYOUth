@@ -102,7 +102,8 @@ angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
       url: "/registration",
       views: {
         "mainContent": {
-          templateUrl: "app/uxpress/registration.html"
+          templateUrl: "app/uxpress/registration.html",
+          controller: 'registrationCtrl'
         }
       }
     })
