@@ -46,30 +46,6 @@
             return id;
         }
 
-        function getLeagues() {
-            var deferred = $q.defer(),
-                cacheKey = "leagues",
-                leaguesData = self.leaguesCache.get(cacheKey);
-
-            if (leaguesData) {
-                console.log("Found data inside cache", leaguesData);
-                deferred.resolve(leaguesData);
-            } else {
-                $http.get("http://elite-schedule.net/api/leaguedata")
-                    .success(function(data) {
-                        console.log("Received data via HTTP");
-                        self.leaguesCache.put(cacheKey, data);
-                        deferred.resolve(data);
-                    })
-                    .error(function() {
-                        console.log("Error while making HTTP call.");
-                        deferred.reject();
-                    });
-            }
-            return deferred.promise;
-        }
-
-
         function getDzongkhags() {
             var deferred = $q.defer(),
                 cacheKey = "dzongkhags",
@@ -80,7 +56,7 @@
                 deferred.resolve(dzongkhagsData);
             } else {
                 $http.get("http://localhost/mpoweryouth/api/dzongkhag_data.php")
-                 .success(function(data) {
+                    .success(function(data) {
                         console.log("Received data via HTTP");
                         self.dzongkhagsCache.put(cacheKey, data);
                         deferred.resolve(data);
@@ -137,43 +113,3 @@
         };
     };
 })();
-// (function() {
-//     'use strict';
-
-//     angular.module('mpoweryouth').factory('mpoweryouthApi', ['$http', mpoweryouthApi]);
-
-//     function mpoweryouthApi($http) {
-
-//         var currentDzongkhagId;
-
-//         function getDzongkhags(callback) {
-//             $http.get("http://localhost/mpoweryouth/api/dzongkhag_data.php")
-//                  .success(function(data){
-//                     callback(data);
-//                  });
-//         }
-
-//         function getCounsellorData(callback) {
-//             $http.get("http://localhost/mpoweryouth/api/counsellor_data.php" + currentDzongkhagId)
-//                  .success(function(data, status){
-//                     console.log("Received Counsellor Data via HTTP.", data, status);
-//                     callback(data);
-//                  })
-//                  .error(function(){
-//                     console.log("Error while making HTTP call");
-//                  }
-//         };
-
-//         function setDzongkhagId(dzongkhagId){
-//             currentDzongkhagId = dzongkhagId;
-//         }
-
-       
-
-//         return {
-//             getDzongkhags: getDzongkhags,
-//             getCounsellorData: getCounsellorData,
-//             setDzongkhagId: setDzongkhagId
-//         };
-//     };
-// })();

@@ -1,52 +1,52 @@
-// angular.module("mpoweryouth", ["ionic"])
-angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
-//This controller invocation is for ngTwitter
-.controller('AppCtrl', function($scope, $ionicPlatform, $twitterApi, $cordovaOauth) {
-  var twitterKey = 'STORAGE.TWITTER.KEY';
-  var clientId = 'WUx1VnLJVGWOSBoBEd4qoCGde';
-  var clientSecret = 'rbw6WOVzheoU3qhRxsJzUYQ2pw5ctA8hSnbi3clfl646JhaPaY';
-  var myToken = '';
+ angular.module("mpoweryouth", ["ionic"])
+// angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
+// //This controller invocation is for ngTwitter
+// .controller('AppCtrl', function($scope, $ionicPlatform, $twitterApi, $cordovaOauth) {
+//   var twitterKey = 'STORAGE.TWITTER.KEY';
+//   var clientId = 'WUx1VnLJVGWOSBoBEd4qoCGde';
+//   var clientSecret = 'rbw6WOVzheoU3qhRxsJzUYQ2pw5ctA8hSnbi3clfl646JhaPaY';
+//   var myToken = '';
  
-  $scope.tweet = {};
+//   $scope.tweet = {};
  
-  $ionicPlatform.ready(function() {
-    myToken = JSON.parse(window.localStorage.getItem(twitterKey));
-    if (myToken === '' || myToken === null) {
-      $cordovaOauth.twitter(clientId, clientSecret).then(function (succ) {
-        myToken = succ;
-        window.localStorage.setItem(twitterKey, JSON.stringify(succ));
-        $twitterApi.configure(clientId, clientSecret, succ);
-        $scope.showHomeTimeline();
-      }, function(error) {
-        console.log(error);
-      });
-    } else {
-      $twitterApi.configure(clientId, clientSecret, myToken);
-      $scope.showHomeTimeline();
-    }
-  });
+//   $ionicPlatform.ready(function() {
+//     myToken = JSON.parse(window.localStorage.getItem(twitterKey));
+//     if (myToken === '' || myToken === null) {
+//       $cordovaOauth.twitter(clientId, clientSecret).then(function (succ) {
+//         myToken = succ;
+//         window.localStorage.setItem(twitterKey, JSON.stringify(succ));
+//         $twitterApi.configure(clientId, clientSecret, succ);
+//         $scope.showHomeTimeline();
+//       }, function(error) {
+//         console.log(error);
+//       });
+//     } else {
+//       $twitterApi.configure(clientId, clientSecret, myToken);
+//       $scope.showHomeTimeline();
+//     }
+//   });
 
-  $scope.showHomeTimeline = function() {
-    $twitterApi.getHomeTimeline().then(function(data) {
-      $scope.home_timeline = data;
-    });
-  };
+//   $scope.showHomeTimeline = function() {
+//     $twitterApi.getHomeTimeline().then(function(data) {
+//       $scope.home_timeline = data;
+//     });
+//   };
  
-  $scope.submitTweet = function() {
-    $twitterApi.postStatusUpdate($scope.tweet.message).then(function(result) {
-      $scope.showHomeTimeline();
-    });
-  }
+//   $scope.submitTweet = function() {
+//     $twitterApi.postStatusUpdate($scope.tweet.message).then(function(result) {
+//       $scope.showHomeTimeline();
+//     });
+//   }
  
-  $scope.doRefresh = function() {
-    $scope.showHomeTimeline();
-    $scope.$broadcast('scroll.refreshComplete');
-  };
+//   $scope.doRefresh = function() {
+//     $scope.showHomeTimeline();
+//     $scope.$broadcast('scroll.refreshComplete');
+//   };
  
-  $scope.correctTimestring = function(string) {
-    return new Date(Date.parse(string));
-  };
-})
+//   $scope.correctTimestring = function(string) {
+//     return new Date(Date.parse(string));
+//   };
+// })
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -59,6 +59,11 @@ angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    // DSCacheFactory("counsellorDataCache", { storageMode: "localStorage", maxAge: 360000, deleteOnExpire: "aggressive" });
+    // DSCacheFactory("dzongkhagsCache", { storageMode: "localStorage", maxAge: 360000, deleteOnExpire: "aggressive" });
+    // DSCacheFactory("myTeamsCache", { storageMode: "localStorage" });
+    // DSCacheFactory("staticCache", { storageMode: "localStorage" });
   });
 })
 

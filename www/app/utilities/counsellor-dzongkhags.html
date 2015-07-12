@@ -2,7 +2,7 @@
   <h2 class="title">Dzongkhag: Counsellors</h2>
 </div>
 
-<ion-view class="app-content">
+<!-- <ion-view class="app-content">
   <ion-content class="has-header">
     <div class="list">
 
@@ -68,4 +68,27 @@
 
     </div>
   </ion-content>
-</ion-view>
+</ion-view> -->
+
+<!-- 
+<ion-view ng-controller="DzongkhagsCtrl as vm">
+  <ion-content class="has-header">
+    <div class="list">
+        <a class="item item-icon-right" ng-repeat="dzongkhag in vm.dzongkhags" ng-click="vm.selectDzongkhag(dzongkhag.dzongkhag_id)">
+            {{dzongkhag.dzongkhag_name}}
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+    </div>
+  </ion-content>
+</ion-view> -->
+<ion-view ng-controller="DzongkhagsCtrl" class="app-content">
+  <ion-content class="has-header">
+    <div class="list">
+        <a class="item item-icon-left item-icon-right" ng-repeat="dzongkhag in dzongkhags" ng-click="selectDzongkhag({{dzongkhag.dzongkhag_id}})">
+            <i class="icon ion-android-contacts"></i>
+            {{dzongkhag.dzongkhag_name}}
+            <i class="icon ion-chevron-right icon-accessory"></i>
+        </a>
+    </div>
+  </ion-content>
+</ion-view> -->
