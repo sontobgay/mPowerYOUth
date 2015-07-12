@@ -2,39 +2,45 @@
   <h2 class="title">Counselling Registrations</h2>
 </div>
 
-<ion-view class="app-content">
+<ion-view class="app-content" ng-controller="registrationCtrl">
   <ion-content class="has-header">
   
-  <form name="registrationForm" ng-submit="register()">
-
+  <form name="registrationForm" ng-submit="counsellingSubmit()">
   <div class="list list-inset">
   <label class="item item-input item-floating-label">
     <span class="input-label">Name</span>
-    <input type="text" placeholder="Name" data-ng-model="name">
+    <input type="text" placeholder="Name" ng-model="data.fullname" required> 
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Age</span>
-    <input type="text" placeholder="Age" data-ng-model="age">
+    <input type="text" placeholder="Age" ng-model="data.age" required>
   </label>
    <label class="item item-input item-floating-label">
     <span class="input-label">Mobile Number</span>
-    <input type="text" placeholder="Mobile Number" data-ng-model="mobile">
+    <input type="text" placeholder="Mobile Number" ng-model="data.mobile" required>
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Email Address</span>
-    <input type="text" placeholder="Email Address" data-ng-model="email">
+    <input type="email" placeholder="Email Address" ng-model="data.email" required>
   </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">Counselling Details</span>
-    <textarea placeholder="Counselling Details" data-ng-model="details"></textarea>
+    <textarea placeholder="Counselling Details" ng-model="data.details" required></textarea>
   </label>
 
 	<div class="button-bar">
-	  <button class="button button-balanced button-block icon-left ion-ios-download" type="submit">Submit</button>
+	  <button class="button button-balanced button-block icon-left ion-ios-download" type="submit" name="submit">Submit</button>
 	  <a class="button button-assertive button-block icon-left ion-ios-close" ui-sref="app.uxpress">Cancel</a>
 	</div> 
 </div>
 </form>
+
+  <div class="card">
+      <div class="item item-text-wrap">
+          Response: <b ng-bind="response"></b>
+      </div>
+  </div>
+
 
   </ion-content>
 </ion-view>

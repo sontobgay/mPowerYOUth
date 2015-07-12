@@ -1,5 +1,4 @@
 // angular.module("mpoweryouth", ["ionic"])
-
 angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
 //This controller invication is for ngTwitter
 .controller('AppCtrl', function($scope, $ionicPlatform, $twitterApi, $cordovaOauth) {
@@ -102,8 +101,7 @@ angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
       url: "/registration",
       views: {
         "mainContent": {
-          templateUrl: "app/uxpress/registration.html",
-          controller: 'registrationCtrl'
+          templateUrl: "app/uxpress/registration.html"
         }
       }
     })
