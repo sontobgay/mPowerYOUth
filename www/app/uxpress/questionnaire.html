@@ -2,8 +2,105 @@
   <h2 class="title">Questionnaire</h2>
 </div>
 
-<ion-view class="app-content">
+<ion-view class="app-content" ng-controller="questionnaireCtrl">
   <ion-content class="has-header">
+  
+  <form name="registrationForm" ng-submit="mindSubmit()">
+  <div class="list list-inset">
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Enter your Name:</span>
+	    <input type="text" placeholder="Enter your name" name="fullname" ng-model="data.fullname" required>
+	    <span ng-show="registrationForm.fullname.$error.required && registrationForm.$dirty" class="error_msg">
+	       <i class="ion-alert-circled"></i> Please enter your name!
+	    </span>
+	  </label>
+
+	  <label class="item item-input">
+  	    <span class="input-label">Gender:</span>
+  	    <label class="item item-radio">
+          <input type="radio" name="gender" value="M" checked="checked" ng-model="data.gender">
+          <div class="item-content">
+            Male
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+
+		<label class="item item-radio">
+          <input type="radio" name="gender" value="F" checked="checked" ng-model="data.gender">
+          <div class="item-content">
+            Female
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+	  </label>
+
+	  <label class="item item-input">
+  	    <span class="input-label">Do you want to talk to youth counsellor:</span>
+  	    <label class="item item-radio">
+          <input type="radio" name="talk_counsellor" value="Y" checked="checked" ng-model="data.talk_counsellor">
+          <div class="item-content">
+            Yes
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+
+		<label class="item item-radio">
+          <input type="radio" name="talk_counsellor" value="N" checked="checked" ng-model="data.talk_counsellor">
+          <div class="item-content">
+            No
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+	  </label>
+
+	  <label class="item item-input">
+  	    <span class="input-label">Are you feeling lonely:</span>
+  	    <label class="item item-radio">
+          <input type="radio" name="felling_lonely" value="Y" checked="checked" ng-model="data.felling_lonely">
+          <div class="item-content">
+            Yes
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+
+		<label class="item item-radio">
+          <input type="radio" name="felling_lonely" value="N" checked="checked" ng-model="data.felling_lonely">
+          <div class="item-content">
+            No
+          </div>
+          <i class="radio-icon ion-checkmark"></i>
+        </label>
+	  </label>
+
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Where are you now:</span>
+	    <input type="text" placeholder="Where are you now" name="location" ng-model="data.location" required>
+	    <span ng-show="registrationForm.location.$error.required && registrationForm.$dirty" class="error_msg">
+	       <i class="ion-alert-circled"></i> Please enter your current location!
+	    </span>
+	  </label>
+
+	  <label class="item item-input item-floating-label">
+	    <span class="input-label">Share your thoughts:</span>
+	    <textarea placeholder="Share your thoughts" name="thoughts" ng-model="data.thoughts" required></textarea>
+	    <span ng-show="registrationForm.thoughts.$error.required && registrationForm.$dirty" class="error_msg">
+	       <i class="ion-alert-circled"></i> Please enter your thoughts!
+	    </span>
+	  </label>
+
+	<div class="button-bar">
+	  <button class="button button-balanced button-block icon-left ion-ios-upload" type="submit" name="submit" ng-disabled="registrationForm.$invalid" >Submit Feedback</button>
+	  <a class="button button-assertive button-block icon-left ion-ios-close" ui-sref="app.uxpress">Cancel</a>
+	</div> 
+</div>
+</form>
+
+  <div class="card">
+      <div class="item item-text-wrap">
+          Response: <b ng-bind="response"></b>
+      </div>
+  </div>
+
 
   </ion-content>
 </ion-view>

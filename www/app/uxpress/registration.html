@@ -8,28 +8,48 @@
   <form name="registrationForm" ng-submit="counsellingSubmit()">
   <div class="list list-inset">
   <label class="item item-input item-floating-label">
-    <span class="input-label">Name</span>
-    <input type="text" placeholder="Name" ng-model="data.fullname" required> 
+    <span class="input-label">Enter your Name:</span>
+    <input type="text" placeholder="Enter your name" name="fullname" ng-model="data.fullname" required>
+    <span ng-show="registrationForm.fullname.$error.required && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your name!
+    </span>
   </label>
   <label class="item item-input item-floating-label">
-    <span class="input-label">Age</span>
-    <input type="text" placeholder="Age" ng-model="data.age" required>
+    <span class="input-label">Enter your Age:</span>
+    <input type="text" placeholder="Enter your Age" ng-model="data.age">
   </label>
    <label class="item item-input item-floating-label">
-    <span class="input-label">Mobile Number</span>
-    <input type="text" placeholder="Mobile Number" ng-model="data.mobile" required>
+    <span class="input-label">Enter your Mobile Number:</span>
+    <input type="tel" placeholder="Enter your Mobile Number" name="mobile" ng-minlength="8" ng-maxlength="13" ng-model="data.mobile" required>
+    <span ng-show="registrationForm.mobile.$error.required && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your mobile number!
+    </span>
+
+    <span ng-show="registrationForm.mobile.$error.number && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Not an mobile number
+    </span>
+
+    <span ng-show="((registrationForm.mobile.$error.minlength || registrationForm.mobile.$error.maxlength) && registrationForm.$dirty)" class="error_msg">
+      <i class="ion-alert-circled"></i> Mobile number should be between 8 - 13 digits
+    </span>
   </label>
   <label class="item item-input item-floating-label">
-    <span class="input-label">Email Address</span>
-    <input type="email" placeholder="Email Address" ng-model="data.email" required>
+    <span class="input-label">Enter your Email Address:</span>
+    <input type="email" placeholder="Email Address" name="email" ng-model="data.email">
+    <span ng-show="registrationForm.email.$error.email && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Not an email address
+    </span>
   </label>
   <label class="item item-input item-floating-label">
-    <span class="input-label">Counselling Details</span>
-    <textarea placeholder="Counselling Details" ng-model="data.details" required></textarea>
+    <span class="input-label">Enter Counselling Details:</span>
+    <textarea placeholder="Enter Counselling Details" name="details" ng-model="data.details" required></textarea>
+    <span ng-show="registrationForm.details.$error.required && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your counselling needs!
+    </span>
   </label>
 
 	<div class="button-bar">
-	  <button class="button button-balanced button-block icon-left ion-ios-download" type="submit" name="submit">Submit</button>
+	  <button class="button button-balanced button-block icon-left ion-ios-upload" type="submit" name="submit" ng-disabled="registrationForm.$invalid" >Submit</button>
 	  <a class="button button-assertive button-block icon-left ion-ios-close" ui-sref="app.uxpress">Cancel</a>
 	</div> 
 </div>

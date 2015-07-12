@@ -2,8 +2,61 @@
   <h2 class="title">Feedback/Recommendations for Bhutan YOUth services</h2>
 </div>
 
-<ion-view class="app-content">
+<ion-view class="app-content" ng-controller="feedbackCtrl">
   <ion-content class="has-header">
+  
+  <form name="registrationForm" ng-submit="feedbackSubmit()">
+  <div class="list list-inset">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Enter your Name:</span>
+    <input type="text" placeholder="Enter your name" name="fullname" ng-model="data.fullname" required>
+    <span ng-show="registrationForm.fullname.$error.required && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your name!
+    </span>
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Enter your Mobile Number:</span>
+    <input type="tel" placeholder="Enter your Mobile Number" name="mobile" ng-minlength="8" ng-maxlength="13" ng-model="data.mobile" required>
+    <span ng-show="registrationForm.mobile.$error.required && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your mobile number!
+    </span>
+
+    <span ng-show="registrationForm.mobile.$error.number && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Not an mobile number
+    </span>
+
+    <span ng-show="((registrationForm.mobile.$error.minlength || registrationForm.mobile.$error.maxlength) && registrationForm.$dirty)" class="error_msg">
+      <i class="ion-alert-circled"></i> Mobile number should be between 8 - 13 digits
+    </span>
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Enter your Email Address:</span>
+    <input type="email" placeholder="Email Address" name="email" ng-model="data.email">
+    <span ng-show="registrationForm.email.$error.email && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Not an email address
+    </span>
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Enter your Feedback:</span>
+    <textarea placeholder="Enter your Feedback" name="feedback" ng-model="data.feedback" required></textarea>
+    <span ng-show="registrationForm.feedback.$error.required && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your feedback!
+    </span>
+  </label>
+
+	<div class="button-bar">
+	  <button class="button button-balanced button-block icon-left ion-ios-upload" type="submit" name="submit" ng-disabled="registrationForm.$invalid" >Submit Feedback</button>
+	  <a class="button button-assertive button-block icon-left ion-ios-close" ui-sref="app.uxpress">Cancel</a>
+	</div> 
+</div>
+</form>
+
+  <div class="card">
+      <div class="item item-text-wrap">
+          Response: <b ng-bind="response"></b>
+      </div>
+  </div>
+
 
   </ion-content>
 </ion-view>
