@@ -1,7 +1,7 @@
 // angular.module("mpoweryouth", ["ionic"])
 
 angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
-//This controller invication is for ngTwitter
+//This controller invocation is for ngTwitter
 .controller('AppCtrl', function($scope, $ionicPlatform, $twitterApi, $cordovaOauth) {
   var twitterKey = 'STORAGE.TWITTER.KEY';
   var clientId = 'WUx1VnLJVGWOSBoBEd4qoCGde';
@@ -135,11 +135,30 @@ angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
       }
     })
 
+    .state('app.counsellor-dzongkhags', {
+      url: "/counsellor-dzongkhags",
+      views: {
+        "mainContent": {
+          templateUrl: "app/utilities/counsellor-dzongkhags.html"
+        }
+      }
+    })
+
     .state('app.counsellors', {
       url: "/counsellors",
       views: {
         "mainContent": {
           templateUrl: "app/utilities/counsellors.html"
+        }
+      }
+    })
+
+
+    .state('app.counsellor-detail', {
+      url: "/counsellor-detail",
+      views: {
+        "mainContent": {
+          templateUrl: "app/utilities/counsellor-detail.html"
         }
       }
     });
