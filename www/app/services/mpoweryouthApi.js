@@ -1,6 +1,7 @@
 (function() {
     'use strict';
 
+<<<<<<< HEAD
     angular.module('mpoweryouth').factory('mpoweryouthApi', ['$http', '$q', '$ionicLoading', 'DSCacheFactory', mpoweryouthApi]);
 
     function mpoweryouthApi($http, $q, $ionicLoading, DSCacheFactory) {
@@ -112,4 +113,25 @@
             setDzongkhagId: setDzongkhagId
         };
     };
+=======
+    angular.module('mpoweryouth').factory('mpoweryouthApi', ['$http',mpoweryouthApi]);
+
+     function mpoweryouthApi($http){
+
+
+        function storeRegistrationData(callback){
+
+            $http.post("http://127.0.0.1/mpoweryouth/register.php")
+                 .success(function(data){
+                    callback(data);
+                 });
+
+        }
+
+        return {
+            storeRegistrationData: storeRegistrationData
+        };
+    };
+
+>>>>>>> origin/master
 })();

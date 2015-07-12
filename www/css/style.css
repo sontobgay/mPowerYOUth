@@ -18,3 +18,5 @@
   background-color: #C0C0C0; 
   font-weight: bold; 
 }
+
+input.ng-invalid{border: 1px solid red;}
