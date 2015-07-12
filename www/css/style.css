@@ -19,4 +19,10 @@
   font-weight: bold; 
 }
 
-input.ng-invalid{border: 1px solid red;}
+.item-floating-label .input-label.has-input{
+	color: #1966A5;
+}
+
+.error_msg{
+	color: #971313;
+}
