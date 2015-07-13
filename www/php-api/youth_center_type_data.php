@@ -1,18 +1,17 @@
-<?php
+	<?php
 	// Include config.php
-	include_once('config.php');
+    include_once("connection.php");
+    
+    $query = "select * from tbl_youth_center_types";
 
-	$query = mysql_query("select * from tbl_youth_center_types");
+	$result = mysqli_query($link, $query);
 
-	while($r = mysql_fetch_array($query)){
-		extract($r);
+	while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+		extract($row);
 		$json_youth_center_types[] = array("center_type_id" => $center_type_id, "center_type_name" => $center_type_name);
-		
 	}
 	
-	// echo json_encode($json_dzongkhag);
-	
-	@mysql_close($conn);
+	@mysqli_close($link);
 
 	/* Output header */
 	header('Content-type: application/json');

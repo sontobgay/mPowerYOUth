@@ -1,5 +1,5 @@
 <div class="bar bar-subheader bar-energized">
-  <h2 class="title">Dzongkhag: Counsellors</h2>
+  <h2 class="title">:Select Dzongkhags:</h2>
 </div>
 
 <!-- <ion-view class="app-content">
@@ -84,7 +84,7 @@
 <ion-view ng-controller="DzongkhagsCtrl" class="app-content">
   <ion-content class="has-header">
     <div class="list">
-        <a class="item item-icon-left item-icon-right" ng-repeat="dzongkhag in dzongkhags" ng-click="selectDzongkhag({{dzongkhag.dzongkhag_id}})">
+        <a class="item item-icon-left item-icon-right" ng-repeat="dzongkhag in dzongkhags" ui-sref="app.counsellor-detail">
             <i class="icon ion-android-contacts"></i>
             {{dzongkhag.dzongkhag_name}}
             <i class="icon ion-chevron-right icon-accessory"></i>
