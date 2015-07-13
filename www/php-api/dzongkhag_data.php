@@ -1,18 +1,17 @@
 <?php
 	// Include config.php
-	include_once('config.php');
+    include_once("connection.php");
 
-	$query = mysql_query("select * from tbl_dzongkhags");
+    $query = "SELECT * FROM tbl_dzongkhags";
 
-	while($r = mysql_fetch_array($query)){
-		extract($r);
+	$result = mysqli_query($link, $query);
+
+	while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+		extract($row);
 		$json_dzongkhag[] = array("dzongkhag_id" => $dzongkhag_id, "dzongkhag_name" => $dzongkhag_name);
-		// $json_dzongkhag[]=$r;
 	}
 	
-	// echo json_encode($json_dzongkhag);
-	
-	@mysql_close($conn);
+	@mysqli_close($link);
 
 	/* Output header */
 	header('Content-type: application/json');

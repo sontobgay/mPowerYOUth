@@ -4,7 +4,7 @@
     $scope.data = {};
 
     $scope.feedbackSubmit = function(){
-        var link = 'http://localhost/mpoweryouth/youth_feedback.php';
+        var link = 'http://localhost/mpoweryouth/api/youth_feedback.php';
         var inputData = {
         	name : $scope.data.fullname,
         	mobile_number : $scope.data.mobile,

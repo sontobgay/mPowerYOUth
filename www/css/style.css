@@ -23,6 +23,10 @@
 	color: #1966A5;
 }
 
+.item-stacked-label .input-label{
+  color: #1966A5;
+}
+
 .error_msg{
 	color: #971313;
 }

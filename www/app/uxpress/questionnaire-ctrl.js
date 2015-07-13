@@ -4,12 +4,14 @@
     $scope.data = {};
 
     $scope.mindSubmit = function(){
-        var link = 'http://localhost/mpoweryouth/youth_mind_assessment.php';
+        var link = 'http://localhost/mpoweryouth/api/youth_mind_assessment.php';
         var inputData = {
         	name : $scope.data.fullname,
-        	mobile_number : $scope.data.mobile,
-        	email_address : $scope.data.email,
-        	feedback : $scope.data.feedback
+        	gender : $scope.data.gender,
+        	talk_counsellor : $scope.data.talk_counsellor,
+        	feeling_lonely : $scope.data.feeling_lonely,
+            location: $scope.data.location,
+            thoughts: $scope.data.thoughts
         };
 
         $http.post(link, inputData).then(function (res){
