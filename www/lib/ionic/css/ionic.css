@@ -3132,7 +3132,7 @@ a.subdued {
     background-image: linear-gradient(0deg, #e6b400, #e6b400 50%, transparent 50%);
     color: #fff; }
     .bar.bar-energized .title {
-      color: #fff; }
+      color: #555; }
     .bar.bar-energized.bar-footer {
       background-image: linear-gradient(180deg, #e6b400, #e6b400 50%, transparent 50%); }
   .bar.bar-royal {
@@ -5287,6 +5287,7 @@ a.item-content {
  * --------------------------------------------------
  */
 .list {
+  color: #FF5600; /*Added to change the app content font color*/
   position: relative;
   padding-top: 1px;
   padding-bottom: 1px;

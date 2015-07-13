@@ -72,9 +72,18 @@
   $stateProvider
 
     .state('home', {
-      // abstract: true,
+      abstract: true,
       url: "/home",
-      templateUrl: "app/home/home.html"
+      templateUrl: "app/home/tab.html"
+    })
+
+    .state('home.index', {
+      url: "/index",
+      views: {
+        "tab-index": {
+          templateUrl: "app/home/home.html"
+        }
+      }
     })
 
     .state('home.uxpress', {
@@ -176,5 +185,5 @@
     });
 
     // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/home/index');
 });

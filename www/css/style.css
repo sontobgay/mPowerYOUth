@@ -3,11 +3,12 @@
 	font-size: 26px;
 }
 
-.app-content{
+/*.app-content{
   margin-top: 46px;
+  margin-bottom: 10px;
   color: #663300;
-  /*margin-left: 5px;*/
-}
+  /*margin-left: 5px;
+}*/
 
 .app-content-twitter{
   margin-top: 75px;
