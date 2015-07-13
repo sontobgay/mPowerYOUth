@@ -72,7 +72,7 @@
   $stateProvider
 
     .state('home', {
-      abstract: true,
+      // abstract: true,
       url: "/home",
       templateUrl: "app/home/home.html"
     })
