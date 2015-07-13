@@ -72,9 +72,36 @@
   $stateProvider
 
     .state('home', {
-      // abstract: true,
+      abstract: true,
       url: "/home",
       templateUrl: "app/home/home.html"
+    })
+
+    .state('home.uxpress', {
+      url: "/uxpress",
+      views: {
+        "tab-uxpress": {
+          templateUrl: "app/uxpress/uxpress.html"
+        }
+      }
+    })
+
+    .state('home.ufeeds', {
+      url: "/ufeeds",
+      views: {
+        "tab-ufeeds": {
+          templateUrl: "app/ufeeds/ufeeds.html"
+        }
+      }
+    })
+
+    .state('home.utilities', {
+      url: "/utilities",
+      views: {
+        "tab-utilities": {
+          templateUrl: "app/utilities/utilities.html"
+        }
+      }
     })
 
     .state('app', {
@@ -83,15 +110,6 @@
       templateUrl: "app/layout/menu-layout.html"
     })
 
-
-    .state('app.uxpress', {
-      url: "/uxpress",
-      views: {
-        "mainContent": {
-          templateUrl: "app/uxpress/uxpress.html"
-        }
-      }
-    })
 
     .state('app.feedback', {
       url: "/feedback",
@@ -116,24 +134,6 @@
       views: {
         "mainContent": {
           templateUrl: "app/uxpress/questionnaire.html"
-        }
-      }
-    })
-
-    .state('app.ufeeds', {
-      url: "/ufeeds",
-      views: {
-        "mainContent": {
-          templateUrl: "app/ufeeds/ufeeds.html"
-        }
-      }
-    })
-
-    .state('app.utilities', {
-      url: "/utilities",
-      views: {
-        "mainContent": {
-          templateUrl: "app/utilities/utilities.html"
         }
       }
     })
