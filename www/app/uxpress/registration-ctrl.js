@@ -4,7 +4,7 @@
     $scope.data = {};
 
     $scope.counsellingSubmit = function(){
-        var link = 'http://localhost/mpoweryouth/api/counselling_registration.php';
+        var link = 'http://119.2.120.36/mpoweryouthApi/counselling_registration.php';
         var inputData = {
         	name : $scope.data.fullname,
         	age  : $scope.data.age,
