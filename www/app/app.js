@@ -1,4 +1,5 @@
  angular.module("mpoweryouth", ["ionic"])
+
 // angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
 // //This controller invocation is for ngTwitter
 // .controller('AppCtrl', function($scope, $ionicPlatform, $twitterApi, $cordovaOauth) {
@@ -166,17 +167,16 @@
     })
 
     .state('app.counsellors', {
-      url: "/counsellors",
+      url: "/counsellors/:dzongkhagId",
       views: {
-        "mainContent": {
+        'mainContent': {
           templateUrl: "app/utilities/counsellors.html"
         }
       }
     })
 
-
     .state('app.counsellor-detail', {
-      url: "/counsellor-detail",
+      url: "/counsellor-detail/:counsellorId",
       views: {
         "mainContent": {
           templateUrl: "app/utilities/counsellor-detail.html"

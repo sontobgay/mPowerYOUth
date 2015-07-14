@@ -11,62 +11,35 @@
 	    </span>
 	  </label>
 
-    <label class="item item-input item-stacked-label">
-  	    <span class="input-label">Gender:</span>
-  	    <label class="item item-radio">
-          <input type="radio" name="gender" value="M" checked="checked" ng-model="data.gender">
-          <div class="item-content">
-            Male
-          </div>
-          <i class="radio-icon ion-checkmark"></i>
-        </label>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Gender:
+      </div>
+      <select name="gender" ng-model="data.gender">
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </label>
 
-		<label class="item item-radio">
-          <input type="radio" name="gender" value="F" checked="checked" ng-model="data.gender">
-          <div class="item-content">
-            Female
-          </div>
-          <i class="radio-icon ion-checkmark"></i>
-        </label>
-	  </label>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Do you want to talk to youth counsellor:
+      </div>
+      <select name="talk_counsellor" ng-model="data.talk_counsellor">
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </label>
 
-	  <label class="item item-input item-stacked-label">
-  	    <span class="input-label">Do you want to talk to youth counsellor:</span>
-  	    <label class="item item-radio">
-          <input type="radio" name="talk_counsellor" value="Y" checked="checked" ng-model="data.talk_counsellor">
-          <div class="item-content">
-            Yes
-          </div>
-          <i class="radio-icon ion-checkmark"></i>
-        </label>
-
-		<label class="item item-radio">
-          <input type="radio" name="talk_counsellor" value="N" checked="checked" ng-model="data.talk_counsellor">
-          <div class="item-content">
-            No
-          </div>
-          <i class="radio-icon ion-checkmark"></i>
-        </label>
-	  </label>
-
-	  <label class="item item-input item-stacked-label">
-  	    <span class="input-label">Are you feeling lonely:</span>
-  	    <label class="item item-radio">
-          <input type="radio" name="feeling_lonely" value="Y" checked="checked" ng-model="data.feeling_lonely">
-          <div class="item-content">
-            Yes
-          </div>
-          <i class="radio-icon ion-checkmark"></i>
-        </label>
-
-		<label class="item item-radio">
-          <input type="radio" name="feeling_lonely" value="N" checked="checked" ng-model="data.feeling_lonely">
-          <div class="item-content">
-            No
-          </div>
-          <i class="radio-icon ion-checkmark"></i>
-        </label>
-	  </label>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Are you feeling lonely:
+      </div>
+      <select name="feeling_lonely" ng-model="data.feeling_lonely">
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </label>
 
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Where are you now:</span>

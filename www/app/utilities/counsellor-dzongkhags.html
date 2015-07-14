@@ -1,7 +1,7 @@
 <ion-view title="Select Dzongkhag" ng-controller="DzongkhagsCtrl">
   <ion-content class="has-header">
     <div class="list">
-        <a class="item item-icon-left item-icon-right" ng-repeat="dzongkhag in dzongkhags" ui-sref="app.counsellor-detail">
+        <a class="item item-icon-left item-icon-right" ng-repeat="dzongkhag in dzongkhags" href="#/app/counsellors/{{dzongkhag.dzongkhag_id}}">
             <i class="icon ion-android-contacts"></i>
             {{dzongkhag.dzongkhag_name}}
             <i class="icon ion-chevron-right icon-accessory"></i>

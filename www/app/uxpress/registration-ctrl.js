@@ -16,6 +16,12 @@
         $http.post(link, inputData).then(function (res){
             $scope.response = res.data;
         });
+
+        $scope.data.fullname = null;
+        $scope.data.age = null;
+        $scope.data.mobile = null;
+        $scope.data.email = null;
+        $scope.data.details = null;
     };
 });
 })();
