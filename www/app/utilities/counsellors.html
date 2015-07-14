@@ -1,40 +1,11 @@
-<div class="bar bar-subheader bar-energized">
-  <h2 class="title">:School Guidance Counsellors:</h2>
-</div>
-
-<ion-view class="app-content">
+<ion-view title="School Guidance Counsellors" ng-controller="CounsellorsCtrl">
   <ion-content class="has-header">
-<div class="list">
-
-    <a class="item item-avatar" ui-sref="app.counsellor-detail">
+  <div class="list">
+    <a class="item item-avatar" ng-repeat="counsellor in counsellors">
       <img src="img/photo.jpg">
-      <h2>Sonam TOBGAY</h2>
-      <p>Yangchenphug Higher Secondary School</p>
+      <h2>{{ counsellor.firstname}} {{ counsellor.middlename }} {{ counsellor.lastname }}</h2>
+      <p>{{ counsellor. schoolname }}</p>
     </a>
-    
-    <a class="item item-avatar" href="#">
-      <img src="img/photo.jpg">
-      <h2>Sonam TASHI</h2>
-      <p>Motithang Higher Secondary School</p>
-    </a>
-
-    <a class="item item-avatar" href="#">
-      <img src="img/photo.jpg">
-      <h2>Tshering Zangmo</h2>
-      <p>Lungtenzampa Lower Secondary School</p>
-    </a>
-
-    <a class="item item-avatar" href="#">
-      <img src="img/photo.jpg">
-      <h2>Pema TASHI</h2>
-      <p>Dechencholing Higher Secondary School</p>
-    </a>
-
-    <a class="item item-avatar" href="#">
-      <img src="img/photo.jpg">
-      <h2>Zangmo</h2>
-      <p>Khasadrapchu Lower Secondary School</p>
-    </a>
-</div>
+  </div>
   </ion-content>
 </ion-view>

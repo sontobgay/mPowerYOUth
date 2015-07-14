@@ -1,11 +1,26 @@
-<ion-view title="School Guidance Counsellor">
+<ion-view title="School Guidance Counsellor" ng-controller="counsellorCtrl">
+  <ion-content class="has-header">
+    <div class="list card">
+        <div class="item item-avatar" ng-repeat="counsellor in counsellors">
+            <img src="img/photo.jpg">
+            <h2>{{counsellor.first_name}}</h2>
+            <p>School Guidance Counsellor</p>
+        </div>
+
+        <div class="item item-body">
+        </div>
+    </div>
+  </ion-content>
+</ion-view> 
+<!-- 
+<ion-view title="School Guidance Counsellor" ng-controller="counsellorCtrl">
   <ion-content>
     <div class="list card">
 
   <div class="item item-avatar">
     <img src="img/photo.jpg">
     <h2>Sonam TOBGAY</h2>
-    <p>School Guidance Counsellor</p>
+    
   </div>
 
   <div class="item item-body">
@@ -18,10 +33,10 @@
     <p>
     Mobile: 77125577
     </p>
-  <!--   <p>
+    <p>
       <a href="#" class="subdued">1 Like</a>
       <a href="#" class="subdued">5 Comments</a>
-    </p> -->
+    </p>
   </div>
 
   <div class="item tabs tabs-secondary tabs-stable tabs-icon-left">
@@ -41,4 +56,4 @@
 
   </div>
   </ion-content>
-</ion-view>
+</ion-view> -->
