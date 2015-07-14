@@ -1,5 +1,5 @@
 angular.module('mpoweryouth').controller('YouthcentersCtrl', function($scope, $http, $ionicLoading) {
-   var link = 'http://119.2.120.36/mpoweryouthApi/youth_center_type_data.php';        
+    var link = 'http://119.2.120.36/mpoweryouthApi/youth_center_type_data.php';        
 	// var link = "http://localhost/mpoweryouth/api/youth_center_type_data.php";
 
     $ionicLoading.show({
