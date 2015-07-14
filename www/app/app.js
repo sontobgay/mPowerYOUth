@@ -176,7 +176,7 @@
     })
 
     .state('app.counsellor-detail', {
-      url: "/counsellor-detail",
+      url: "/counsellor-detail/:counsellorId",
       views: {
         "mainContent": {
           templateUrl: "app/utilities/counsellor-detail.html"
