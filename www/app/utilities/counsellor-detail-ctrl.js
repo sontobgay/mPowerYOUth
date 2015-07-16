@@ -9,5 +9,6 @@ angular.module('mpoweryouth').controller('CounsellorDetailsCtrl', function($scop
     $http.get(link).then(function (resCounsellorDetail){
         $ionicLoading.hide();
         $scope.counsellors = resCounsellorDetail.data;
+        // console.log($scope.counsellors);
     });
 });
