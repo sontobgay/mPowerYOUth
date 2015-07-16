@@ -26,18 +26,27 @@
 	
 		// Escape user inputs for security
 		$name = mysqli_real_escape_string($link, $data->name);
+		$gender = mysqli_real_escape_string($link, $data->gender);
 		$age = mysqli_real_escape_string($link, $data->age);
 		$mobile = mysqli_real_escape_string($link, $data->mobile_number);
 		$email = mysqli_real_escape_string($link, $data->email_address);
+		$dzongkhag = mysqli_real_escape_string($link, $data->dzongkhag);
+		$area = mysqli_real_escape_string($link, $data->area);
+		$issue = mysqli_real_escape_string($link, $data->issue);
 		$details = mysqli_real_escape_string($link, $data->counselling_details);
 		 
 		// attempt insert query execution
- 		$sql = "INSERT INTO tbl_counselling_registration(applicant_name,applicant_age,applicant_mobile,applicant_email,counselling_details) 
+ 		$sql = "INSERT INTO tbl_counselling_registration(applicant_name,gender, applicant_age,applicant_mobile,applicant_email, dzongkhag_id, dzongkhag_area, issue_id, counselling_details, date_registered) 
  				values('$name',
+ 					   '$gender',
  					   '$age',
  					   '$mobile',
  					   '$email',
- 					   '$details')";
+ 					   '$dzongkhag',
+ 					   '$area',
+ 					   '$issue',
+ 					   '$details',
+ 					   NOW())";
 
 		if(mysqli_query($link, $sql)){
 		    echo "Records added successfully.";

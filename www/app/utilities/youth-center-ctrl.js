@@ -3,7 +3,7 @@ angular.module('mpoweryouth').controller('YouthcentersCtrl', function($scope, $h
 	// var link = "http://localhost/mpoweryouth/api/youth_center_type_data.php";
 
     $ionicLoading.show({
-        template: '<span class="icon ion-load-a"></span> Loading Youth Centers'
+        template: '<i class="fa fa-spinner fa-spin"></i> Loading Youth Centers'
     });
 
     $http.get(link).then(function (resYouthcentertypes){

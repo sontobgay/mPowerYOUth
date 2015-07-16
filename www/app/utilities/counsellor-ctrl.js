@@ -3,7 +3,7 @@ angular.module('mpoweryouth').controller('CounsellorsCtrl', function($scope, $st
     //var link = "http://localhost/mpoweryouth/api/counsellor_data.php?dzongkhag_id="+$stateParams.dzongkhagId;
     $ionicLoading.show({
 
-        template: '<span class="icon ion-load-a"></span> Loading counsellors'
+        template: '<i class="fa fa-spinner fa-spin"></i> Loading counsellors'
     });
 
     // console.log($routeParams.dzongkhagId);
