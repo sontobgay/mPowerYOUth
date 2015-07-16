@@ -12,13 +12,13 @@ angular.module('mpoweryouth').controller('YouthcentersCtrl', function($scope, $h
     });
 
 
-    $scope.selectDzongkhag = function(dzongkhagID) {
-        var link = "http://119.2.120.36/mpoweryouthApi/counsellor_data.php?dzongkhag_id=" + dzongkhagID;
-        // var link = "http://localhost/mpoweryouth/api/counsellor_data.php?dzongkhag_id=" + dzongkhagID;
-        $http.get(link).then(function (resCounsellors){
-            $scope.counsellors = resCounsellors.data;
-            console.log($scope.counsellors);
-        });
-    }
+    // $scope.selectDzongkhag = function(dzongkhagID) {
+    //     var link = "http://119.2.120.36/mpoweryouthApi/counsellor_data.php?dzongkhag_id=" + dzongkhagID;
+    //     // var link = "http://localhost/mpoweryouth/api/counsellor_data.php?dzongkhag_id=" + dzongkhagID;
+    //     $http.get(link).then(function (resCounsellors){
+    //         $scope.counsellors = resCounsellors.data;
+    //         console.log($scope.counsellors);
+    //     });
+    // }
 
 });
