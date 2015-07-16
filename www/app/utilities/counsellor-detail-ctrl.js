@@ -6,11 +6,8 @@ angular.module('mpoweryouth').controller('CounsellorDetailsCtrl', function($scop
         template: '<i class="fa fa-spinner fa-spin"></i> Loading counsellor Details'
     });
 
-    // console.log($routeParams.dzongkhagId);
-
     $http.get(link).then(function (resCounsellorDetail){
         $ionicLoading.hide();
         $scope.counsellors = resCounsellorDetail.data;
-        console.log($scope.counsellors);
     });
 });

@@ -2,7 +2,7 @@
   <ion-content class="has-header">
     <div class="list card" ng-repeat="counsellor in counsellors">
         <div class="item item-avatar">
-            <img src="img/photo.jpg">
+            <img src="{{ (counsellor.counsellor_photo == "") ? 'http://119.2.120.36/mpoweryouthApi/counsellor_photo/no_pic.png' : 'counsellor.counsellor_photo' }}">
             <h2>{{ counsellor.firstname}} {{ counsellor.middlename }} {{ counsellor.lastname }}</h2>
             <p>School Guidance Counsellor</p>
         </div>
