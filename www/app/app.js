@@ -148,11 +148,11 @@
       }
     })
 
-    .state('app.youth-centers', {
-      url: "/youth-centers",
+    .state('app.youth-center-types', {
+      url: "/youth-center-types",
       views: {
         "mainContent": {
-          templateUrl: "app/utilities/youth-centers.html"
+          templateUrl: "app/utilities/youth-center-types.html"
         }
       }
     })
@@ -180,6 +180,15 @@
       views: {
         "mainContent": {
           templateUrl: "app/utilities/counsellor-detail.html"
+        }
+      }
+    })
+
+    .state('app.helpline-details', {
+      url: "/helpline-details",
+      views: {
+        "mainContent": {
+          templateUrl: "app/utilities/helpline-details.html"
         }
       }
     });
