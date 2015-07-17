@@ -1,40 +1,16 @@
-  <ion-view title="m-Power YOUth">
-  <ion-content class="has-header">
-  <div class="list card">
-   <div class="item item-divider">
-   Golden Youth Award Camp 2015, begins
+<ion-view title="m-Power YOUth">
+ <ion-pane>
+  <ion-content class="has-header" ng-controller="HomeCtrl" ng-init="init()">
+  <ion-refresher on-refresh="init()"></ion-refresher>
+  <div class="list">
+    <a class="item item-thumbnail-left" href="{{entry.link}}" target="_blank" ng-repeat="entry in entries">
+      <img ng-src="{{entry.content}}" ng-if="entry.content.startsWith('http://')">
+      <h2>{{entry.title}}</h2>
+      <p>{{entry.contentSnippet}}<br>
+        <span>{{entry.publishedDate | date:'d-MM-yyyy'}}</span>
+      </p>
+    </a>
   </div>
-  <div class="item item-text-wrap">
-    The 8th Golden Youth Award Camp begins today at  Nazhoen Pelri Youth Development Centre, Thimphu. Initiated in 2005 to commemorate the 50th birth anniversary of His Majesty the 4th Druk Gyalpo Jigme Singye Wangchuck, the award is given every year to the youth for outstanding achievement not only in academics but also in categories such as sports, art, leadership, culture and social engagement.
-    <img src="img/golden_youth.jpg">
-  </div>
-  </div>
-
-  <div class="list card">
-   <div class="item item-divider">
-   Youth Scholarship Announcements.
-  </div>
-  <div class="item item-text-wrap">
-    The Bhutan Youth Development Fund is pleased to announce the availability of One 100% scholarship and Four 50% scholarships in Genesis Global School in Noida, India. The Scholarship is for students who wish to study in Genesis Global School from grade VII-XII.
-  </div>
-  </div>
-
-  <div class="list card">
-   <div class="item item-divider">
-  Youth Winter Camp.
-  </div>
-  <div class="item item-text-wrap">
-    News content here.News content here.News content here.News content here.News content here.
-  </div>
-  </div>
-
-  <div class="list card">
-   <div class="item item-divider">
-   YOuth Event
-  </div>
-  <div class="item item-text-wrap">
-    News content here.News content here.News content here.News content here.News content here.
-  </div>
-  </div>
-  </ion-content>
-  </ion-view>
+ </ion-content>
+ </ion-pane>
+</ion-view>

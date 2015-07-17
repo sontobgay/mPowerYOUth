@@ -4,15 +4,20 @@
   <description>
       Mobile App for Bhutan Youth Empowerment and Counselling!
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
+    <author email="hi@ionicframework" href="http://ionicframework.com/">
       Ionic Framework Team
     </author>
   <content src="index.html"/>
   <access origin="*"/>
+<<<<<<< HEAD
+  <access origin="tel:*" launch-external="yes" />
+  <access origin="mailto:*" launch-external="yes" />
+=======
   <allow-intent href="sms:*" />
   <allow-intent href="tel:*" />
   <allow-intent href="mailto:*" />
   <!--<access origin="tel:*" launch-external="yes"/>-->
+>>>>>>> origin/master
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
