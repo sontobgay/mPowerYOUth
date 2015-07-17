@@ -1,10 +1,1 @@
 open -a /Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --args --disable-web-security
-119.2.120.36:....@1234@....
-
-DYS Web Server Details:
-
-IP 202.144.144.195
-uid root
-pwd moe2014
-mysql root
-pwd ''
