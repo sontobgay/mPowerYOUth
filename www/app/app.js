@@ -166,6 +166,15 @@
       }
     })
 
+    .state('app.youth-centers-detail', {
+      url: "/youth-center-detail/:centerId",
+      views: {
+        "mainContent": {
+          templateUrl: "app/utilities/youth-center-detail.html"
+        }
+      }
+    })
+
     .state('app.counsellor-dzongkhags', {
       url: "/counsellor-dzongkhags",
       views: {
