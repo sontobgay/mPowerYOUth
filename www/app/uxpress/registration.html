@@ -16,11 +16,11 @@
       <option value="M">Male</option>
       <option value="F">Female</option>
     </select>
+  </label>
 
-    <span ng-show="registrationForm.gender.$error.required && registrationForm.$dirty" class="error_msg">
+    <span ng-show="registrationForm.gender.$error.required && registrationForm.$dirty" class="error_msg item">
       <i class="ion-alert-circled"></i> Please select a gender
     </span>
-  </label>
 
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Age:</span>
@@ -66,12 +66,11 @@
       <option value="">[Current Dzongkhag]</option>
       <option ng-repeat="dzongkhag in dzongkhags" value="{{dzongkhag.dzongkhag_id}}">{{ dzongkhag.dzongkhag_name }}</option>
     </select>
-
-    <span ng-show="registrationForm.dzongkhag.$error.required && registrationForm.$dirty" class="error_msg">
-      <i class="ion-alert-circled"></i> Please select a Dzongkhag
-    </span>
-
   </label>
+
+    <span ng-show="registrationForm.dzongkhag.$error.required && registrationForm.$dirty" class="error_msg item">
+    <i class="ion-alert-circled"></i> Please select a Dzongkhag
+  </span>
 
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter Current Location:</span>
@@ -86,11 +85,11 @@
       <option value="">[Select Issue]</option>
       <option ng-repeat="issue in issues" value="{{issue.issue_id}}">{{ issue.issue_name }}</option>
     </select>
+  </label>
 
-    <span ng-show="registrationForm.issue.$error.required && registrationForm.$dirty" class="error_msg">
+    <span ng-show="registrationForm.issue.$error.required && registrationForm.$dirty" class="error_msg item">
       <i class="ion-alert-circled"></i> Please select a Issue
     </span>
-  </label>
 
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter Counselling Details:</span>

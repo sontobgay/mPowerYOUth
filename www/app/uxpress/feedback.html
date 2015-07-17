@@ -1,6 +1,5 @@
 <ion-view title="Feedback for YOUth Services" ng-controller="feedbackCtrl">
   <ion-content class="has-header">
-  
   <form name="registrationForm" ng-submit="feedbackSubmit()">
   <div class="list list-inset">
   <label class="item item-input item-floating-label">
@@ -10,6 +9,7 @@
        <i class="ion-alert-circled"></i> Please enter your name!
     </span>
   </label>
+
    <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Mobile Number:</span>
     <input type="tel" placeholder="Enter your Mobile Number" name="mobile" ng-minlength="8" ng-maxlength="13" ng-model="data.mobile" required>
@@ -25,6 +25,7 @@
       <i class="ion-alert-circled"></i> Mobile number should be between 8 - 13 digits
     </span>
   </label>
+
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Email Address:</span>
     <input type="email" placeholder="Email Address" name="email" ng-model="data.email">
@@ -32,6 +33,7 @@
       <i class="ion-alert-circled"></i> Not an email address
     </span>
   </label>
+
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Feedback:</span>
     <textarea placeholder="Enter your Feedback" name="feedback" ng-model="data.feedback" required></textarea>

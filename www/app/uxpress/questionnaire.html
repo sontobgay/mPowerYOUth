@@ -11,43 +11,94 @@
 	    </span>
 	  </label>
 
-    <label class="item item-input item-select">
-      <div class="input-label">
-        Gender:
-      </div>
-      <select name="gender" ng-model="data.gender">
-        <option value="M">Male</option>
-        <option value="F">Female</option>
-      </select>
-    </label>
+  <label class="item item-input item-select">
+  <div class="input-label">
+    Gender:
+  </div>
+    <select name="gender" ng-model="data.gender" required>
+      <option value="M">Male</option>
+      <option value="F">Female</option>
+    </select>
+  </label>
+
+  <span ng-show="registrationForm.gender.$error.required && registrationForm.$dirty" class="item error_msg">
+    <i class="ion-alert-circled"></i> Please select a gender
+  </span>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Enter your Mobile Number:</span>
+    <input type="tel" placeholder="Enter your Mobile Number" name="mobile" ng-minlength="8" ng-maxlength="8" ng-model="data.mobile" required>
+    <span ng-show="registrationForm.mobile.$error.required && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your mobile number!
+    </span>
+
+    <span ng-show="registrationForm.mobile.$error.number && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Not an mobile number
+    </span>
+
+    <span ng-show="((registrationForm.mobile.$error.minlength || registrationForm.mobile.$error.maxlength) && registrationForm.$dirty)" class="error_msg">
+      <i class="ion-alert-circled"></i> Mobile number should be 8 digits
+    </span>
+  </label>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Enter your Email Address:</span>
+    <input type="email" placeholder="Email Address" name="email" ng-model="data.email" required>
+    <span ng-show="registrationForm.email.$error.required && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Please enter an email address
+    </span>
+
+    <span ng-show="registrationForm.email.$error.email && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Not an email address
+    </span>
+  </label>
+
+ <label class="item item-input item-select">
+    <div class="input-label">
+      Dzongkhag:
+    </div>
+    <select name="dzongkhag" ng-model="data.dzongkhag" ng-focus="getDzongkhag()" required>
+      <option value="">[Current Dzongkhag]</option>
+      <option ng-repeat="dzongkhag in dzongkhags" value="{{dzongkhag.dzongkhag_id}}">{{ dzongkhag.dzongkhag_name }}</option>
+    </select>
+  </label>
+
+    <span ng-show="registrationForm.dzongkhag.$error.required && registrationForm.$dirty" class="error_msg item">
+    <i class="ion-alert-circled"></i> Please select a Dzongkhag
+  </span>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Enter Current Location:</span>
+    <input type="text" placeholder="Enter Current Location " name="area" ng-model="data.area">
+  </label>
 
     <label class="item item-input item-select">
       <div class="input-label">
         Do you want to talk to youth counsellor:
       </div>
-      <select name="talk_counsellor" ng-model="data.talk_counsellor">
+      <select name="talk_counsellor" ng-model="data.talk_counsellor" required>
         <option value="Y">Yes</option>
         <option value="N">No</option>
       </select>
     </label>
+
+    <span ng-show="registrationForm.talk_counsellor.$error.required && registrationForm.$dirty" class="item error_msg">
+      <i class="ion-alert-circled"></i> Please select an option
+    </span>
 
     <label class="item item-input item-select">
       <div class="input-label">
         Are you feeling lonely:
       </div>
-      <select name="feeling_lonely" ng-model="data.feeling_lonely">
+      <select name="feeling_lonely" ng-model="data.feeling_lonely" required>
         <option value="Y">Yes</option>
         <option value="N">No</option>
       </select>
     </label>
 
-	  <label class="item item-input item-floating-label">
-	    <span class="input-label">Where are you now:</span>
-	    <input type="text" placeholder="Where are you now" name="location" ng-model="data.location" required>
-	    <span ng-show="registrationForm.location.$error.required && registrationForm.$dirty" class="error_msg">
-	       <i class="ion-alert-circled"></i> Please enter your current location!
-	    </span>
-	  </label>
+    <span ng-show="registrationForm.feeling_lonely.$error.required && registrationForm.$dirty" class="item error_msg">
+      <i class="ion-alert-circled"></i> Please select an option
+    </span>    
 
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Share your thoughts:</span>

@@ -4,7 +4,7 @@
         <a class="item" ng-repeat="dzongkhag in dzongkhags" href="#/app/counsellors/{{dzongkhag.dzongkhag_id}}">
             <i class="fa fa-university fa-lg"></i>
             {{dzongkhag.dzongkhag_name}}
-            <span class="badge badge-balanced">5</span>
+            <span class="badge badge-balanced">{{ dzongkhag.counsellorCount }}</span>
         </a>
     </div>
   </ion-content>

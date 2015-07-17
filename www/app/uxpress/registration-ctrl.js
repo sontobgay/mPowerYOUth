@@ -27,14 +27,7 @@
             $scope.response = res.data;
         });
 
-        $scope.data.fullname = null;
-        $scope.data.age = null;
-        $scope.data.mobile = null;
-        $scope.data.email = null;
-        $scope.data.dzongkhag = null;
-        $scope.data.area = null;
-        $scope.data.issue = null;
-        $scope.data.details = null;
+        $scope.data = {};
     };
 
     $scope.getDzongkhag = function(){
