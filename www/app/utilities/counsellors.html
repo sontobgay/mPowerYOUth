@@ -2,7 +2,7 @@
   <ion-content class="has-header">
   <div class="list">
     <a class="item item-avatar item-icon-right" ng-repeat="counsellor in counsellors" href="#/app/counsellor-detail/{{counsellor.counsellor_id}}">
-      <img src="{{ counsellor.counsellorphoto }}">
+      <img ng-src="{{ counsellor.counsellorphoto }}">
       <h2>{{ counsellor.firstname}} {{ counsellor.middlename }} {{ counsellor.lastname }}</h2>
       <p>{{ counsellor. schoolname }}</p>
       <i class="icon ion-chevron-right icon-accessory"></i>
