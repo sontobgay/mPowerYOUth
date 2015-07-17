@@ -8,7 +8,14 @@
 
 	while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 		extract($row);
-		$json_dzongkhag[] = array("dzongkhag_id" => $dzongkhag_id, "dzongkhag_name" => $dzongkhag_name);
+
+		$sql = "SELECT COUNT(*) as CounsellorCount FROM tbl_school_counsellors WHERE dzongkhag_id=$dzongkhag_id";
+
+		$sqlResult = mysqli_query($link, $sql);
+
+		$record = mysqli_fetch_array($sqlResult, MYSQLI_ASSOC);
+
+		$json_dzongkhag[] = array("dzongkhag_id" => $dzongkhag_id, "dzongkhag_name" => $dzongkhag_name, "counsellorCount" => $record['CounsellorCount']);
 	}
 	
 	@mysqli_close($link);

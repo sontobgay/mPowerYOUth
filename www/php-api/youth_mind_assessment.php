@@ -27,19 +27,26 @@
 		// Escape user inputs for security
 		$name = mysqli_real_escape_string($link, $data->name);
 		$gender = mysqli_real_escape_string($link, $data->gender);
+		$mobile = mysqli_real_escape_string($link, $data->mobile);
+		$email = mysqli_real_escape_string($link, $data->email);
+		$dzongkhag = mysqli_real_escape_string($link, $data->dzongkhag);
+		$area = mysqli_real_escape_string($link, $data->area);
 		$talk_counsellor = mysqli_real_escape_string($link, $data->talk_counsellor);
 		$feeling_lonely = mysqli_real_escape_string($link, $data->feeling_lonely);
-		$location = mysqli_real_escape_string($link, $data->location);
 		$thoughts = mysqli_real_escape_string($link, $data->thoughts);
 		 
 		// attempt insert query execution
- 		$sql = "INSERT INTO tbl_youth_mind_assessment(name,talk_counsellor,feeling_lonely,youth_thoughts,location_now,gender) 
+ 		$sql = "INSERT INTO tbl_youth_mind_assessment(name,gender, mobile, email, dzongkhag_area, talk_counsellor,feeling,your_thoughts,dzongkhag_id,assessment_date) 
  				VALUES('$name',
+ 					   '$gender',
+ 					   '$mobile',
+ 					   '$email',
+ 					   '$area',
  					   '$talk_counsellor',
  					   '$feeling_lonely',
  					   '$thoughts',
- 					   '$location',
- 					   '$gender')";
+ 					   '$dzongkhag',
+ 					   NOW())";
 
 		if(mysqli_query($link, $sql)){
 		    echo "Records added successfully.";

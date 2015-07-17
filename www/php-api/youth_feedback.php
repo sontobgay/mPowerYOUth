@@ -31,11 +31,12 @@
 		$feedback = mysqli_real_escape_string($link, $data->feedback);
 		 
 		// attempt insert query execution
- 		$sql = "INSERT INTO tbl_youth_feedbacks(youth_name,youth_phone,youth_email,feedback_details) 
+ 		$sql = "INSERT INTO tbl_youth_feedbacks(youth_name,youth_phone,youth_email,feedback_details, feedback_date) 
  				values('$name',
  					   '$phone',
  					   '$email',
- 					   '$feedback')";
+ 					   '$feedback',
+ 					   NOW())";
 
 		if(mysqli_query($link, $sql)){
 		    echo "Records added successfully.";

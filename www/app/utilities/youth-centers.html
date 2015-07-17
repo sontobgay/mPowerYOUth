@@ -1,0 +1,10 @@
+<ion-view title="Youth Centers Across the Country" ng-controller="YouthCentersCtrl">
+  <ion-content class="has-header">
+  <div class="list">
+    <a class="item item-icon-right" ng-repeat="youthcenter in youthcenters" href="#/app/youth-center-detail/{{youthcenter.center_id}}">
+      <h2>{{ youthcenter.centername}}</h2>
+      <i class="icon ion-chevron-right icon-accessory"></i>
+    </a>
+  </div>
+  </ion-content>
+</ion-view>

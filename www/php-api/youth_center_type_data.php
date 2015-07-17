@@ -1,4 +1,4 @@
-	<?php
+<?php
 	// Include config.php
     include_once("connection.php");
     
@@ -17,3 +17,4 @@
 	header('Content-type: application/json');
 	//echo json_encode($json_dzongkhag);
 	echo json_encode($json_youth_center_types);
+?>
