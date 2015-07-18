@@ -3,12 +3,10 @@
   <ion-content class="has-header" ng-controller="HomeCtrl" ng-init="init()">
   <ion-refresher on-refresh="init()"></ion-refresher>
   <div class="list">
-    <a class="item item-thumbnail-left" href="{{entry.link}}" target="_blank" ng-repeat="entry in entries">
-      <img ng-src="{{entry.content}}">
+    <a class="item" href="{{entry.link}}" target="_blank" ng-repeat="entry in entries">
       <h2>{{entry.title}}</h2>
       <p>{{entry.contentSnippet}}<br>
-        <p ng-bind-html="entry.publishedDate | date:'MM/dd/yyyy'"></p>
-        <span>{{entry.publishedDate | date:'d-MM-yyyy'}}</span>
+        <span>{{entry.publishedDate}}</span>
       </p>
     </a>
   </div>

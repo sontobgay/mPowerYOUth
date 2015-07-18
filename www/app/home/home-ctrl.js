@@ -9,7 +9,7 @@ var app = angular.module('mpoweryouth');
     });
 
 	$scope.init = function() {
-        $http.get("http://ajax.googleapis.com/ajax/services/feed/load", { params: { "v": "1.0", "q": "http://blog.nraboy.com/feed/","num":"10" } })
+        $http.get("http://ajax.googleapis.com/ajax/services/feed/load", { params: { "v": "1.0", "q": "http://www.bhutanyouth.org/feed","num":"10" } })
             .success(function(data) {
             	$ionicLoading.hide();
                 console.log(data);
