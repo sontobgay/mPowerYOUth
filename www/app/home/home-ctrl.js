@@ -9,9 +9,10 @@ var app = angular.module('mpoweryouth');
     });
 
 	$scope.init = function() {
-        $http.get("http://ajax.googleapis.com/ajax/services/feed/load", { params: { "v": "1.0", "q": "http://feeds.feedburner.com/bhutanyouth/JvOM" } })
+        $http.get("http://ajax.googleapis.com/ajax/services/feed/load", { params: { "v": "1.0", "q": "http://blog.nraboy.com/feed/","num":"10" } })
             .success(function(data) {
             	$ionicLoading.hide();
+                console.log(data);
                 $scope.entries = data.responseData.feed.entries;
 				window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
             })

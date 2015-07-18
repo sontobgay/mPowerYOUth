@@ -4,13 +4,16 @@
   <ion-refresher on-refresh="init()"></ion-refresher>
   <div class="list">
     <a class="item item-thumbnail-left" href="{{entry.link}}" target="_blank" ng-repeat="entry in entries">
-      <img ng-src="{{entry.content}}" ng-if="entry.content.startsWith('http://')">
+      <img ng-src="{{entry.content}}">
       <h2>{{entry.title}}</h2>
       <p>{{entry.contentSnippet}}<br>
+        <p ng-bind-html="entry.publishedDate | date:'MM/dd/yyyy'"></p>
         <span>{{entry.publishedDate | date:'d-MM-yyyy'}}</span>
       </p>
     </a>
   </div>
+  
+  <ion-infinite-scroll on-infinite="init()" distance="1%"></ion-infinite-scroll>
  </ion-content>
  </ion-pane>
 </ion-view>
