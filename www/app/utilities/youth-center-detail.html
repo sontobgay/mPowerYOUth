@@ -2,20 +2,18 @@
   <ion-content class="has-header">
     <div class="list" >
 
-        <div class="card">
-        <div class="item item-divider" ng-repeat="ycd in youth_center_detail">
+        <div class="card" ng-repeat="ycd in youth_center_detail">
+        <div class="item item-divider">
           {{ycd.centername}}
-          <p>{{ycd.facilities}}</p>
         </div>
         <div class="item item-text-wrap">
-          
+        <p><b>Location:</b><br>{{ycd.centerarea}}, {{ycd.dzongkhagName}}</p>
+        <p><b>Telephone:</b> {{ycd.contactnumber}}</p>
+        <p><b>Email:</b>{{ycd.email}}</p>
+        <p><b>Facilities:</b><br>{{ycd.facilities}}</p>
+        <p><b>Owned by:</b> {{ycd.stakeholderName}}</p>
         </div>
-        <div class="item item-divider">
-        I'm a Footer in a Card!
         </div>
-        </div>
-        </div>
-        
-      
-        </ion-content>
+    </div>
+   </ion-content>
 </ion-view> 
