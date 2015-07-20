@@ -10,12 +10,12 @@ angular.module('mpoweryouth').controller('DzongkhagsCtrl', function($scope, $htt
         $ionicLoading.hide();
         $scope.dzongkhags = resDzongkhags.data;
         console.log($scope.dzongkhags);
-        window.localStorage["dzongkhags"] = JSON.stringify(data.responseData.feed.dzongkhags);
-    })
-    .error(function(data) {
-        console.log("ERROR: " + data);
-        if(window.localStorage["dzongkhags"] !== undefined) {
-            $scope.dzongkhags = JSON.parse(window.localStorage["dzongkhags"]);
-        }
+        // window.localStorage["dzongkhags"] = JSON.stringify(data.responseData.feed.dzongkhags);
     });
+    // .error(function(data) {
+    //     console.log("ERROR: " + data);
+    //     if(window.localStorage["dzongkhags"] !== undefined) {
+    //         $scope.dzongkhags = JSON.parse(window.localStorage["dzongkhags"]);
+    //     }
+    // });
 });
