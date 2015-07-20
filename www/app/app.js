@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpoweryouth.twitter-services", "mpoweryouth.twitter-filters"])
 
 // angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
@@ -50,25 +51,24 @@
 // })
 
 .run(function($ionicPlatform) {
+=======
+(function(){
+
+var app = angular.module("mpoweryouth", ["ionic"]);
+
+app.run(function($ionicPlatform) {
+>>>>>>> origin/master
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
     }
     if(window.StatusBar) {
-      // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-
-    // DSCacheFactory("counsellorDataCache", { storageMode: "localStorage", maxAge: 360000, deleteOnExpire: "aggressive" });
-    // DSCacheFactory("dzongkhagsCache", { storageMode: "localStorage", maxAge: 360000, deleteOnExpire: "aggressive" });
-    // DSCacheFactory("myTeamsCache", { storageMode: "localStorage" });
-    // DSCacheFactory("staticCache", { storageMode: "localStorage" });
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
@@ -214,3 +214,5 @@
     // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home/index');
 });
+
+})();
