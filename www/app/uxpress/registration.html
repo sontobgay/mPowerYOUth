@@ -1,4 +1,4 @@
-<ion-view title="Counselling Registrations" ng-controller="registrationCtrl">
+<ion-view title="Counselling Registrations" ng-controller="registrationCtrl" ng-init="getDzongkhag(); getIssue()">
   <ion-content class="has-header">
   
   <form name="registrationForm" ng-submit="counsellingSubmit()">
@@ -62,7 +62,7 @@
     <div class="input-label">
       Dzongkhag:
     </div>
-    <select name="dzongkhag" ng-model="data.dzongkhag" ng-focus="getDzongkhag()" required>
+    <select name="dzongkhag" ng-model="data.dzongkhag" required>
       <option value="">[Select Dzongkhag]</option>
       <option ng-repeat="dzongkhag in dzongkhags" value="{{dzongkhag.dzongkhag_id}}">{{ dzongkhag.dzongkhag_name }}</option>
     </select>
@@ -81,7 +81,7 @@
     <div class="input-label">
       Issues:
     </div>
-    <select name="issue" ng-model="data.issue" ng-focus="getIssue()" required>
+    <select name="issue" ng-model="data.issue" required>
       <option value="">[Select Issue]</option>
       <option ng-repeat="issue in issues" value="{{issue.issue_id}}">{{ issue.issue_name }}</option>
     </select>
