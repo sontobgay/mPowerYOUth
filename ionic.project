@@ -1,15 +1,4 @@
 {
   "name": "mPowerYOUth",
-<<<<<<< HEAD
-  "app_id": "79e76994"
-=======
-  "app_id": "884fd26c",
-  "browsers": [
-    {
-      "platform": "android",
-      "browser": "crosswalk",
-      "version": "12.41.296.5"
-    }
-  ]
->>>>>>> origin/master
+  "app_id": "884fd26c" 
 }

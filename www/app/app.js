@@ -1,5 +1,4 @@
-<<<<<<< HEAD
- angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpoweryouth.twitter-services", "mpoweryouth.twitter-filters"])
+angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpoweryouth.twitter-services", "mpoweryouth.twitter-filters"])
 
 // angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
 // //This controller invocation is for ngTwitter
@@ -51,13 +50,6 @@
 // })
 
 .run(function($ionicPlatform) {
-=======
-(function(){
-
-var app = angular.module("mpoweryouth", ["ionic"]);
-
-app.run(function($ionicPlatform) {
->>>>>>> origin/master
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -68,7 +60,7 @@ app.run(function($ionicPlatform) {
   });
 })
 
-app.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
 
@@ -214,5 +206,3 @@ app.config(function($stateProvider, $urlRouterProvider) {
     // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/home/index');
 });
-
-})();
