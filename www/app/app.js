@@ -1,54 +1,5 @@
 angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpoweryouth.twitter-services", "mpoweryouth.twitter-filters"])
 
-// angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
-// //This controller invocation is for ngTwitter
-// .controller('AppCtrl', function($scope, $ionicPlatform, $twitterApi, $cordovaOauth) {
-//   var twitterKey = 'STORAGE.TWITTER.KEY';
-//   var clientId = 'WUx1VnLJVGWOSBoBEd4qoCGde';
-//   var clientSecret = 'rbw6WOVzheoU3qhRxsJzUYQ2pw5ctA8hSnbi3clfl646JhaPaY';
-//   var myToken = '';
- 
-//   $scope.tweet = {};
- 
-//   $ionicPlatform.ready(function() {
-//     myToken = JSON.parse(window.localStorage.getItem(twitterKey));
-//     if (myToken === '' || myToken === null) {
-//       $cordovaOauth.twitter(clientId, clientSecret).then(function (succ) {
-//         myToken = succ;
-//         window.localStorage.setItem(twitterKey, JSON.stringify(succ));
-//         $twitterApi.configure(clientId, clientSecret, succ);
-//         $scope.showHomeTimeline();
-//       }, function(error) {
-//         console.log(error);
-//       });
-//     } else {
-//       $twitterApi.configure(clientId, clientSecret, myToken);
-//       $scope.showHomeTimeline();
-//     }
-//   });
-
-//   $scope.showHomeTimeline = function() {
-//     $twitterApi.getHomeTimeline().then(function(data) {
-//       $scope.home_timeline = data;
-//     });
-//   };
- 
-//   $scope.submitTweet = function() {
-//     $twitterApi.postStatusUpdate($scope.tweet.message).then(function(result) {
-//       $scope.showHomeTimeline();
-//     });
-//   }
- 
-//   $scope.doRefresh = function() {
-//     $scope.showHomeTimeline();
-//     $scope.$broadcast('scroll.refreshComplete');
-//   };
- 
-//   $scope.correctTimestring = function(string) {
-//     return new Date(Date.parse(string));
-//   };
-// })
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
