@@ -1,17 +1,18 @@
 <ion-view title="YOUth Twitter Feeds">
   <ion-pane>
-    <ion-content class="has-header padding">
+    <ion-content class="has-header padding iframe-issue" scroll="true">
       <div class="list">
-        <div class="item item-input-inset">
+      <iframe src="https://twitter.com/dawtashi"style="width:100%;height:100%"></iframe>
+      <!--   <div class="item item-input-inset">
           <label class="item-input-wrapper">
             <input type="text" placeholder="My tweet..." ng-model="tweet.message" ng-maxlength="140">
           </label>
           <button class="button button-small" ng-click="submitTweet()">
             Tweet
           </button>
-        </div>
+        </div> -->
       </div>
-      <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+     <!--  <ion-refresher on-refresh="doRefresh()"></ion-refresher>
  
       <div ng-show="home_timeline.length == 0">Loading tweets...</div>
  
@@ -27,7 +28,7 @@
           <img ng-if="entry.extended_entities" ng-src="{{ entry.extended_entities.media[0].media_url }}" style="width: 100%;"/>
         </div>
  
-      </div>
+      </div> -->
     </ion-content>
   </ion-pane>
 </ion-view>

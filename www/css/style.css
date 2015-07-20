@@ -8,12 +8,6 @@
   /*margin-left: 5px;*/
 }
 
-.list .item.item-divider {
-  color: #555;
-  background-color: #C0C0C0; 
-  font-weight: bold; 
-}
-
 .item-floating-label .input-label.has-input{
 	color: #1966A5;
 }
@@ -25,3 +19,8 @@
 .error_msg{
 	color: #971313;
 }
+
+ .iframe-issue {
+    -webkit-overflow-scrolling: touch !important;
+    overflow: scroll !important;
+  }

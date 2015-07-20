@@ -58,7 +58,7 @@
       Dzongkhag:
     </div>
     <select name="dzongkhag" ng-model="data.dzongkhag" ng-focus="getDzongkhag()" required>
-      <option value="">[Current Dzongkhag]</option>
+      <option value="">[Select Dzongkhag]</option>
       <option ng-repeat="dzongkhag in dzongkhags" value="{{dzongkhag.dzongkhag_id}}">{{ dzongkhag.dzongkhag_name }}</option>
     </select>
   </label>
@@ -109,8 +109,8 @@
 	  </label>
 
 	<div class="button-bar">
-	  <button class="button button-balanced button-block icon-left ion-ios-upload" type="submit" name="submit" ng-disabled="registrationForm.$invalid" >Submit Feedback</button>
-	  <a class="button button-assertive button-block icon-left ion-ios-close" ui-sref="home.uxpress">Cancel</a>
+	  <button class="button button-balanced button-block" type="submit" name="submit" ng-disabled="registrationForm.$invalid"><i class="fa fa-floppy-o"></i> Submit Feedback</button>
+	  <a class="button button-assertive button-block" ui-sref="home.uxpress"><i class="fa fa-times-circle"></i> Cancel</a>
 	</div> 
 </div>
 </form>
