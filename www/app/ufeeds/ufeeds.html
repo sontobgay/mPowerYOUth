@@ -1,33 +1,36 @@
-<ion-view title="YOUth Twitter Feeds">
-  <ion-pane>
-    <ion-content class="has-header padding">
-      <div class="list">
-        <div class="item item-input-inset">
-          <label class="item-input-wrapper">
-            <input type="text" placeholder="My tweet..." ng-model="tweet.message" ng-maxlength="140">
-          </label>
-          <button class="button button-small" ng-click="submitTweet()">
-            Tweet
-          </button>
-        </div>
-      </div>
-      <ion-refresher on-refresh="doRefresh()"></ion-refresher>
- 
-      <div ng-show="home_timeline.length == 0">Loading tweets...</div>
- 
-      <div ng-repeat="entry in home_timeline" class="list card">
-        <div class="item item-avatar">
-          <img ng-src="{{entry.user.profile_image_url}}"/>
-          <h2>{{entry.user.name}}</h2>
-          <p>{{correctTimestring(entry.created_at) | date:'medium'}}</p>
-        </div>
- 
-        <div class="item item-body">
-          <p ng-bind-html="entry.text"></p>
-          <img ng-if="entry.extended_entities" ng-src="{{ entry.extended_entities.media[0].media_url }}" style="width: 100%;"/>
-        </div>
- 
-      </div>
-    </ion-content>
-  </ion-pane>
+<ion-view view-title="YOUth Twitter Feed" ng-controller="TwitterFeedCtrl">
+  <ion-content class="has-header" ng-init="init()">
+  <ion-refresher on-refresh="init()"></ion-refresher>
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="tweet in tweets">
+        <img ng-src="{{ tweet.user.profile_image_url }}">
+        <h2>{{ tweet.user.name }}</h2>
+        <small>@{{ tweet.user.screen_name }}</small>
+        <small class="time"> {{ tweet.created_at | formatTwitterDate}}</small>
+        <!-- <p ng-bind-html="tweet.text | formatTwitterText"></p> -->
+        <pre ng-bind-html="tweet.text | formatTwitterText"></pre>
+      </a>
+    </div>
+  </ion-content>
 </ion-view>
+<!-- 
+<ion-view title="Youth Tweets" ng-controller="UfeedsCtrl">
+  <ion-content class="has-header">
+  <div class="list list-inset">
+  <div class="button-bar">
+    <a class="button button-balanced button-block icon-left ion-ios-download" ng-click="loadTwitterFeeds()">Load Live Tweets related to Youths</a>
+  </div> 
+</div>
+</form>
+
+<div class="card">
+  <div class="item item-divider item-text-wrap">
+    Register Your Mobile Number here to receive live tweets as SMS!
+  </div>
+  <div class="item">
+    <a class="button button-balanced button-block" ng-click="smsTweets()"><i class="fa fa-floppy-o"></i> Register for Tweets</a>
+  </div>
+</div>
+
+</ion-content>
+</ion-view> -->

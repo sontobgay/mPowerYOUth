@@ -25,3 +25,7 @@
 .error_msg{
 	color: #971313;
 }
+
+pre {
+	font-family:"Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";
+}

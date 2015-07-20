@@ -1,9 +1,9 @@
-<ion-view title="m-Power YOUth">
+<ion-view title="mPowerYOUth: Mobile Youth!">
  <ion-pane>
   <ion-content class="has-header" ng-controller="HomeCtrl" ng-init="init()">
   <ion-refresher on-refresh="init()"></ion-refresher>
   <div class="list">
-    <a class="item" href="{{entry.link}}" target="_blank" ng-repeat="entry in entries">
+    <a class="item" href="{{entry.link}}" target="_system" ng-repeat="entry in entries">
       <h2>{{entry.title}}</h2>
       <p>{{entry.contentSnippet}}<br>
         <span>{{entry.publishedDate}}</span>

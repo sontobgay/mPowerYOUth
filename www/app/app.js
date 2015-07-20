@@ -1,4 +1,4 @@
- angular.module("mpoweryouth", ["ionic"])
+ angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpoweryouth.twitter-services", "mpoweryouth.twitter-filters"])
 
 // angular.module('mpoweryouth', ['ionic', 'ngResource', 'ngCordova', 'ngTwitter'])
 // //This controller invocation is for ngTwitter
