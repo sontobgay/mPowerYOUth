@@ -32,17 +32,17 @@
   
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Mobile Number:</span>
-    <input type="tel" placeholder="Enter your Mobile Number" name="mobile" ng-minlength="8" ng-maxlength="8" ng-model="data.mobile" required>
+    <input type="number" placeholder="Enter your Mobile Number" name="mobile" ng-minlength="8" ng-maxlength="8" ng-model="data.mobile" ng-pattern="/^(16|17|77)[0-9]{6}$/" required>
     <span ng-show="registrationForm.mobile.$error.required && registrationForm.$dirty" class="error_msg">
        <i class="ion-alert-circled"></i> Please enter your mobile number!
     </span>
 
-    <span ng-show="registrationForm.mobile.$error.number && registrationForm.$dirty" class="error_msg">
-      <i class="ion-alert-circled"></i> Not an mobile number
+    <span ng-show="registrationForm.mobile.$error.pattern && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Invalid Phone Number!
     </span>
 
-    <span ng-show="((registrationForm.mobile.$error.minlength || registrationForm.mobile.$error.maxlength) && registrationForm.$dirty)" class="error_msg">
-      <i class="ion-alert-circled"></i> Mobile number should be 8 digits
+    <span ng-show="registrationForm.mobile.$error.number && registrationForm.$dirty" class="error_msg">
+      <i class="ion-alert-circled"></i> Not an mobile number
     </span>
   </label>
 
