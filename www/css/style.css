@@ -20,17 +20,16 @@
 	color: #971313;
 }
 
-.rssFeed h2{
-  font-family:"Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";
-  font-size: 15px;
+pre{
+  font-family:"Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";  
 }
 
-pre#title h2{
+pre#title{
   font-size: 19px;
+  color: #000;
 }
 
-.item pre#rssContent div{
-  font-size: 17px;
-  font-family:"Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";
-  color: blue;
+pre#date{
+  font-size: 14px;
+  font-style: italic;
 }

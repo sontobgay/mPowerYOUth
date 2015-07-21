@@ -11,7 +11,9 @@ angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpow
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider, $compileProvider) {
+.config(function($stateProvider, $urlRouterProvider, $compileProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.backButton.previousTitleText(false).text('');
+
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|tel|sms|mailto|file):/);
  
   $stateProvider

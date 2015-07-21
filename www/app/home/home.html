@@ -4,11 +4,10 @@
   <ion-refresher on-refresh="init()"></ion-refresher>
   <div class="list">
     <a class="item" ng-click="openLink('{{entry.link}}')" ng-repeat="entry in entries">
-      <pre id="title"><h2>{{entry.title}}</h2></pre>
-      <span><b>Published:</b> {{entry.publishedDate}}</span>
-      <pre id="rssContent">
-        <span ng-bind-html="entry.contentSnippet">Read more <i class="fa fa-external-link"></i></span> 
-       </pre>
+      <pre ng-bind-html="entry.title" id="title"></pre>
+      <b>Published:</b><pre ng-bind-html="entry.publishedDate" id="date"></pre>
+      <pre ng-bind-html="entry.contentSnippet"></pre>
+        <div>Read more <i class="fa fa-external-link"></i></div>
     </a>
   </div>
  </ion-content>
