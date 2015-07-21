@@ -8,9 +8,25 @@ angular.module('mpoweryouth').controller('YouthCentersCtrl', function($scope, $s
 
     // console.log($routeParams.dzongkhagId);
 
-    $http.get(link).then(function (resYouthCenters){
-        $ionicLoading.hide();
-        $scope.youthcenters = resYouthCenters.data;
-        console.log($scope.youthcenters);
-    });
+    // $http.get(link).then(function (resYouthCenters){
+    //     $ionicLoading.hide();
+    //     $scope.youthcenters = resYouthCenters.data;
+    //     console.log($scope.youthcenters);
+    // });
+
+    $scope.init = function() {
+        $http.get(link)
+            .success(function(data) {
+                $ionicLoading.hide();
+                console.log(data);
+                $scope.youthcenters = data;
+                window.localStorage["youthcenters"] = JSON.stringify(data);
+            })
+            .error(function(data) {
+                console.log("ERROR: " + data);
+                if(window.localStorage["youthcenters"] !== undefined) {
+                    $scope.youthcenters = JSON.parse(window.localStorage["youthcenters"]);
+                }
+            });
+    }
 });

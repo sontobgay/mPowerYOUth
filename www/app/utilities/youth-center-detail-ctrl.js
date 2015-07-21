@@ -6,9 +6,25 @@ angular.module('mpoweryouth').controller('YouthcenterDetailsCtrl', function($sco
         template: '<i class="fa fa-spinner fa-spin"></i> Loading Center Detail'
     });
 
-    $http.get(link).then(function (resYouthCenterDetail){
-        $ionicLoading.hide();
-        $scope.youth_center_detail = resYouthCenterDetail.data;
-        console.log($scope.youth_center_detail);
-    });
+    // $http.get(link).then(function (resYouthCenterDetail){
+    //     $ionicLoading.hide();
+    //     $scope.youth_center_detail = resYouthCenterDetail.data;
+    //     console.log($scope.youth_center_detail);
+    // });
+
+    $scope.init = function() {
+        $http.get(link)
+            .success(function(data) {
+                $ionicLoading.hide();
+                console.log(data);
+                $scope.youth_center_detail = data;
+                window.localStorage["youth_center_detail"] = JSON.stringify(data);
+            })
+            .error(function(data) {
+                console.log("ERROR: " + data);
+                if(window.localStorage["youth_center_detail"] !== undefined) {
+                    $scope.youth_center_detail = JSON.parse(window.localStorage["youth_center_detail"]);
+                }
+            });
+    }
 });

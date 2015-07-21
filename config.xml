@@ -9,18 +9,12 @@
     </author>
   <content src="index.html"/>
   <access origin="*"/>
-<<<<<<< HEAD
-  <!-- <allow-navigation href="http://k-rudy.github.io/phonegap-twitter-timeline?613020326528573440" /> -->
-=======
- 
   <access origin="tel:*" launch-external="yes" />
   <access origin="mailto:*" launch-external="yes" />
   <access origin="sms:*" launch-external="yes" />
   <allow-intent href="mailto:*" />
   <allow-intent href="tel:*" />
   <allow-intent href="sms:*" />
- 
->>>>>>> origin/master
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>

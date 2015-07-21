@@ -6,19 +6,25 @@ angular.module('mpoweryouth').controller('YouthCenterTypesCtrl', function($scope
         template: '<i class="fa fa-spinner fa-spin"></i> Loading Youth Centers'
     });
 
-    $http.get(link).then(function (resYouthcentertypes){
-        $ionicLoading.hide();
-        $scope.youth_center_types = resYouthcentertypes.data;
-    });
+    // $http.get(link).then(function (resYouthcentertypes){
+    //     $ionicLoading.hide();
+    //     $scope.youth_center_types = resYouthcentertypes.data;
+    // });
 
 
-    // $scope.selectDzongkhag = function(dzongkhagID) {
-    //     var link = "http://119.2.120.36/mpoweryouthApi/counsellor_data.php?dzongkhag_id=" + dzongkhagID;
-    //     // var link = "http://localhost/mpoweryouth/api/counsellor_data.php?dzongkhag_id=" + dzongkhagID;
-    //     $http.get(link).then(function (resCounsellors){
-    //         $scope.counsellors = resCounsellors.data;
-    //         console.log($scope.counsellors);
-    //     });
-    // }
-
+    $scope.init = function() {
+        $http.get(link)
+            .success(function(data) {
+                $ionicLoading.hide();
+                console.log(data);
+                $scope.youth_center_types = data;
+                window.localStorage["youth_center_types"] = JSON.stringify(data);
+            })
+            .error(function(data) {
+                console.log("ERROR: " + data);
+                if(window.localStorage["youth_center_types"] !== undefined) {
+                    $scope.youth_center_types = JSON.parse(window.localStorage["youth_center_types"]);
+                }
+            });
+    }
 });

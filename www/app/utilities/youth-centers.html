@@ -1,4 +1,4 @@
-<ion-view title="Youth Centers Across the Country" ng-controller="YouthCentersCtrl">
+<ion-view title="Youth Centers Across the Country" ng-controller="YouthCentersCtrl"  ng-init="init()">
   <ion-content class="has-header">
   <div class="list">
     <a class="item item-icon-right" ng-repeat="youthcenter in youthcenters" href="#/app/youth-center-detail/{{youthcenter.center_id}}">

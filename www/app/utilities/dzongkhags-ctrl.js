@@ -6,16 +6,19 @@ angular.module('mpoweryouth').controller('DzongkhagsCtrl', function($scope, $htt
         template: '<i class="fa fa-spinner fa-spin"></i> Loading dzongkhags'
     });
 
-    $http.get(link).then(function (resDzongkhags){
-        $ionicLoading.hide();
-        $scope.dzongkhags = resDzongkhags.data;
-        console.log($scope.dzongkhags);
-        // window.localStorage["dzongkhags"] = JSON.stringify(data.responseData.feed.dzongkhags);
-    });
-    // .error(function(data) {
-    //     console.log("ERROR: " + data);
-    //     if(window.localStorage["dzongkhags"] !== undefined) {
-    //         $scope.dzongkhags = JSON.parse(window.localStorage["dzongkhags"]);
-    //     }
-    // });
+    $scope.init = function() {
+        $http.get(link)
+            .success(function(data) {
+                $ionicLoading.hide();
+                console.log(data);
+                $scope.dzongkhags = data;
+                window.localStorage["dzongkhags"] = JSON.stringify(data);
+            })
+            .error(function(data) {
+                console.log("ERROR: " + data);
+                if(window.localStorage["dzongkhags"] !== undefined) {
+                    $scope.dzongkhags = JSON.parse(window.localStorage["dzongkhags"]);
+                }
+            });
+    }
 });
