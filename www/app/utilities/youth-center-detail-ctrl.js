@@ -21,6 +21,7 @@ angular.module('mpoweryouth').controller('YouthcenterDetailsCtrl', function($sco
                 window.localStorage["youth_center_detail"] = JSON.stringify(data);
             })
             .error(function(data) {
+                $ionicLoading.hide();
                 console.log("ERROR: " + data);
                 if(window.localStorage["youth_center_detail"] !== undefined) {
                     $scope.youth_center_detail = JSON.parse(window.localStorage["youth_center_detail"]);

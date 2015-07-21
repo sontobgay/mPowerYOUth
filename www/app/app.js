@@ -11,8 +11,9 @@ angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpow
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
-
+.config(function($stateProvider, $urlRouterProvider, $compileProvider) {
+  $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|tel|sms|mailto|file):/);
+ 
   $stateProvider
 
     .state('home', {

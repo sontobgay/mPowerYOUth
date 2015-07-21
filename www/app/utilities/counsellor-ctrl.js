@@ -16,6 +16,7 @@ angular.module('mpoweryouth').controller('CounsellorsCtrl', function($scope, $st
                 window.localStorage["counsellors"] = JSON.stringify(data);
             })
             .error(function(data) {
+                $ionicLoading.hide();
                 console.log("ERROR: " + data);
                 if(window.localStorage["counsellors"] !== undefined) {
                     $scope.counsellors = JSON.parse(window.localStorage["counsellors"]);

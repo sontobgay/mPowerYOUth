@@ -1,12 +1,14 @@
 <ion-view title="m-Power YOUth">
  <ion-pane>
-  <ion-content class="has-header" ng-controller="HomeCtrl" ng-init="init()">
+  <ion-content class="has-header padding" ng-controller="HomeCtrl" ng-init="init()">
   <ion-refresher on-refresh="init()"></ion-refresher>
   <div class="list">
     <a class="item" ng-click="openLink('{{entry.link}}')" ng-repeat="entry in entries">
-      <pre class="title"><h2>{{entry.title}}</h2></pre>
-      <pre>{{entry.contentSnippet}} Read more <i class="fa fa-external-link"></i> </pre>
-        <span class="date">{{entry.publishedDate}}</span>
+      <pre id="title"><h2>{{entry.title}}</h2></pre>
+      <span><b>Published:</b> {{entry.publishedDate}}</span>
+      <pre id="rssContent">
+        <span ng-bind-html="entry.contentSnippet">Read more <i class="fa fa-external-link"></i></span> 
+       </pre>
     </a>
   </div>
  </ion-content>

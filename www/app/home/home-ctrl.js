@@ -17,6 +17,7 @@ var app = angular.module('mpoweryouth');
                 window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
             })
             .error(function(data) {
+                $ionicLoading.hide();
                 console.log("ERROR: " + data);
                 if(window.localStorage["entries"] !== undefined) {
                     $scope.entries = JSON.parse(window.localStorage["entries"]);

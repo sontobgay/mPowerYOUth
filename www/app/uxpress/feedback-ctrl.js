@@ -21,6 +21,7 @@
         $http.post(link, inputData).then(function (res){
             $ionicLoading.hide();
             $scope.response = res.data;
+            $ionicLoading.show({ template: $scope.response, noBackdrop: true, duration: 5000 });
         });
 
         $scope.data = {};

@@ -14,6 +14,7 @@ angular.module('mpoweryouth.twitter-controllers', [])
 		$ionicLoading.hide();
         console.log(tweets);
         $scope.tweets = tweets.statuses;
+        window.localStorage["twitterFeeds"] = JSON.stringify(tweets);
     	$scope.$broadcast('scroll.refreshComplete');
 	  })
 	}

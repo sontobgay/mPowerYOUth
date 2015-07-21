@@ -20,13 +20,17 @@
 	color: #971313;
 }
 
-<<<<<<< HEAD
-pre {
-	font-family:"Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";
+.rssFeed h2{
+  font-family:"Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";
+  font-size: 15px;
 }
-=======
- .iframe-issue {
-    -webkit-overflow-scrolling: touch !important;
-    overflow: scroll !important;
-  }
->>>>>>> origin/master
+
+pre#title h2{
+  font-size: 19px;
+}
+
+.item pre#rssContent div{
+  font-size: 17px;
+  font-family:"Helvetica Neue", "Roboto", "Segoe UI", "sans-serif";
+  color: blue;
+}

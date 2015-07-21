@@ -25,6 +25,7 @@
         $http.post(link, inputData).then(function (res){
             $ionicLoading.hide();
             $scope.response = res.data;
+            $ionicLoading.show({ template: $scope.response, noBackdrop: true, duration: 5000 });
         });
 
         $scope.data = {};
@@ -38,11 +39,21 @@
             template: '<i class="fa fa-spinner fa-spin"></i> Loading dzongkhags'
         });
 
-        $http.get(link).then(function (resDzongkhags){
-            $ionicLoading.hide();
-            $scope.dzongkhags = resDzongkhags.data;
-            console.log($scope.dzongkhags);
+        $http.get(link)
+            .success(function(data) {
+                $ionicLoading.hide();
+                console.log(data);
+                $scope.dzongkhags = data;
+                window.localStorage["getdzongkhags"] = JSON.stringify(data);
+            })
+            .error(function(data) {
+                $ionicLoading.hide();
+                console.log("ERROR: " + data);
+                if(window.localStorage["getdzongkhags"] !== undefined) {
+                    $scope.dzongkhags = JSON.parse(window.localStorage["getdzongkhags"]);
+                }
         });
+
     };
 
     $scope.getIssue = function(){
@@ -54,10 +65,19 @@
             template: '<i class="fa fa-spinner fa-spin"></i> Loading issues'
         });
 
-        $http.get(link).then(function (resIssues){
-            $ionicLoading.hide();
-            $scope.issues = resIssues.data;
-            console.log($scope.issues);
+        $http.get(link)
+            .success(function(data) {
+                $ionicLoading.hide();
+                console.log(data);
+                $scope.issues = data;
+                window.localStorage["getissues"] = JSON.stringify(data);
+            })
+            .error(function(data) {
+                $ionicLoading.hide();
+                console.log("ERROR: " + data);
+                if(window.localStorage["getissues"] !== undefined) {
+                    $scope.issues = JSON.parse(window.localStorage["getissues"]);
+                }
         });
     };
 });

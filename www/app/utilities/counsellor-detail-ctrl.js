@@ -12,19 +12,14 @@ angular.module('mpoweryouth').controller('CounsellorDetailsCtrl', function($scop
                 $ionicLoading.hide();
                 console.log(data);
                 $scope.counsellors = data;
-                window.localStorage["counsellors"] = JSON.stringify(data);
+                window.localStorage["counsellorDetails"] = JSON.stringify(data);
             })
             .error(function(data) {
+               $ionicLoading.hide();
                 console.log("ERROR: " + data);
-                if(window.localStorage["counsellors"] !== undefined) {
-                    $scope.counsellors = JSON.parse(window.localStorage["counsellors"]);
+                if(window.localStorage["counsellorDetails"] !== undefined) {
+                    $scope.counsellors = JSON.parse(window.localStorage["counsellorDetails"]);
                 }
             });
     }
-
-    // $http.get(link).then(function (resCounsellorDetails){
-    //     $ionicLoading.hide();
-    //     $scope.counsellors = resCounsellorDetails.data;
-    //     console.log($scope.counsellors);
-    // });
 });
