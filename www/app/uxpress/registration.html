@@ -1,4 +1,4 @@
-<ion-view title="Counselling Registrations" ng-controller="registrationCtrl" ng-init="getDzongkhag(); getIssue()">
+<ion-view title="Counselling Registration" ng-controller="registrationCtrl" ng-init="getDzongkhag(); getIssue()">
   <ion-content class="has-header">
   
   <form name="registrationForm" ng-submit="counsellingSubmit()">
@@ -7,7 +7,6 @@
     <span class="input-label">Enter your Name:</span>
     <input type="text" placeholder="Enter your name" name="fullname" ng-model="data.fullname">
   </label>
-
   <label class="item item-input item-select">
     <div class="input-label">
       Gender:
@@ -24,9 +23,13 @@
 
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Age:</span>
-    <input type="text" placeholder="Enter your Age" ng-model="data.age" name="age" required>
+    <input type="number" placeholder="Enter your Age" ng-model="data.age" name="age" ng-pattern="/^\d{1,2}$/" required>
     <span ng-show="registrationForm.age.$error.required && registrationForm.$dirty" class="error_msg">
        <i class="ion-alert-circled"></i> Please enter your age!
+    </span>
+
+    <span ng-show="registrationForm.age.$error.pattern && registrationForm.$dirty" class="error_msg">
+       <i class="ion-alert-circled"></i> Please enter your valid age!
     </span>
   </label>
   
@@ -99,6 +102,10 @@
     </span>
   </label>
 
+  <label class="item">
+    <span>Enter Counselling Details:</span>
+  </label>
+
 	<div class="button-bar">
 	  <button class="button button-balanced button-block" type="submit" name="submit" ng-disabled="registrationForm.$invalid"><i class="fa fa-floppy-o"></i> Submit</button>
 	  <a class="button button-assertive button-block" ui-sref="home.uxpress"><i class="fa fa-times-circle"></i>
@@ -106,13 +113,5 @@
 	</div> 
 </div>
 </form>
-
-  <div class="card">
-      <div class="item item-text-wrap">
-          Response: <b ng-bind="response"></b>
-      </div>
-  </div>
-
-
   </ion-content>
 </ion-view>

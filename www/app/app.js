@@ -51,6 +51,15 @@ angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpow
       }
     })
 
+    .state('home.about', {
+      url: "/about",
+      views: {
+        "tab-about": {
+          templateUrl: "app/home/about.html"
+        }
+      }
+    })
+
     .state('home.utilities', {
       url: "/utilities",
       views: {

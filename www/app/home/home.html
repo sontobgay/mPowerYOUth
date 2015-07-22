@@ -1,11 +1,11 @@
-<ion-view title="m-Power YOUth">
+<ion-view title="mPowerYOUth: Empowering YOUths">
  <ion-pane>
   <ion-content class="has-header padding" ng-controller="HomeCtrl" ng-init="init()">
   <ion-refresher on-refresh="init()"></ion-refresher>
   <div class="list">
     <a class="item" ng-click="openLink('{{entry.link}}')" ng-repeat="entry in entries">
       <pre ng-bind-html="entry.title" id="title"></pre>
-      <b>Published:</b><pre ng-bind-html="entry.publishedDate" id="date"></pre>
+      <b>Published:</b><pre ng-bind-html="correctTimeString(entry.publishedDate)" id="date"></pre>
       <pre ng-bind-html="entry.contentSnippet"></pre>
         <div>Read more <i class="fa fa-external-link"></i></div>
     </a>

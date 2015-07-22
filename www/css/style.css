@@ -33,3 +33,8 @@ pre#date{
   font-size: 14px;
   font-style: italic;
 }
+
+a.btn{
+  font-weight: bold;
+  text-align: left !important;
+}

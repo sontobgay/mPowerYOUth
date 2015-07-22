@@ -29,5 +29,9 @@ var app = angular.module('mpoweryouth');
     $scope.openLink = function (link){
         window.open(encodeURI(link), '_system', 'location=yes');
     }
+
+    $scope.correctTimeString = function(string){
+        return new Date(Date.parse(string)).toString();
+    }
 });
 }());
