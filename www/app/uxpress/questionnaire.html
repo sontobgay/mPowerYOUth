@@ -1,14 +1,11 @@
-<ion-view title="Share your thoughts" ng-controller="questionnaireCtrl" ng-init="getDzongkhag()">
+<ion-view title="Share Your Thoughts" ng-controller="questionnaireCtrl" ng-init="getDzongkhag()">
   <ion-content class="has-header">
   
   <form name="registrationForm" ng-submit="mindSubmit()">
   <div class="list list-inset">
 	  <label class="item item-input item-floating-label">
 	    <span class="input-label">Enter your Name:</span>
-	    <input type="text" placeholder="Enter your name" name="fullname" ng-model="data.fullname" required>
-	    <span ng-show="registrationForm.fullname.$error.required && registrationForm.$dirty" class="error_msg">
-	       <i class="ion-alert-circled"></i> Please enter your name!
-	    </span>
+	    <input type="text" placeholder="Enter your name" name="fullname" ng-model="data.fullname">
 	  </label>
 
   <label class="item item-input item-select">
@@ -43,11 +40,7 @@
 
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Email Address:</span>
-    <input type="email" placeholder="Email Address" name="email" ng-model="data.email" required>
-    <span ng-show="registrationForm.email.$error.required && registrationForm.$dirty" class="error_msg">
-      <i class="ion-alert-circled"></i> Please enter an email address
-    </span>
-
+    <input type="email" placeholder="Email Address" name="email" ng-model="data.email">
     <span ng-show="registrationForm.email.$error.email && registrationForm.$dirty" class="error_msg">
       <i class="ion-alert-circled"></i> Not an email address
     </span>

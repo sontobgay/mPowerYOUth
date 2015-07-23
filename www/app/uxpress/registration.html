@@ -51,11 +51,7 @@
 
   <label class="item item-input item-floating-label">
     <span class="input-label">Enter your Email Address:</span>
-    <input type="email" placeholder="Email Address" name="email" ng-model="data.email" required>
-    <span ng-show="registrationForm.email.$error.required && registrationForm.$dirty" class="error_msg">
-      <i class="ion-alert-circled"></i> Please enter an email address
-    </span>
-
+    <input type="email" placeholder="Email Address" name="email" ng-model="data.email">
     <span ng-show="registrationForm.email.$error.email && registrationForm.$dirty" class="error_msg">
       <i class="ion-alert-circled"></i> Not an email address
     </span>
