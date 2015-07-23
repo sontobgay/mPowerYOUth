@@ -38,3 +38,8 @@ a.btn{
   font-weight: bold;
   text-align: left !important;
 }
+
+p.about{
+  font-weight: bold;
+  color: #A65C00;
+}
