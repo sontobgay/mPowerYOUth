@@ -11,13 +11,11 @@ angular.module('mpoweryouth').controller('CounsellorsCtrl', function($scope, $st
         $http.get(link)
             .success(function(data) {
                 $ionicLoading.hide();
-                console.log(data);
                 $scope.counsellors = data;
                 window.localStorage["counsellors"] = JSON.stringify(data);
             })
             .error(function(data) {
                 $ionicLoading.hide();
-                console.log("ERROR: " + data);
                 if(window.localStorage["counsellors"] !== undefined) {
                     $scope.counsellors = JSON.parse(window.localStorage["counsellors"]);
                 }

@@ -10,13 +10,11 @@ angular.module('mpoweryouth').controller('DzongkhagsCtrl', function($scope, $htt
         $http.get(link)
             .success(function(data) {
                 $ionicLoading.hide();
-                console.log(data);
                 $scope.dzongkhags = data;
                 window.localStorage["dzongkhags"] = JSON.stringify(data);
             })
             .error(function(data) {
                 $ionicLoading.hide();
-                console.log("ERROR: " + data);
                 if(window.localStorage["dzongkhags"] !== undefined) {
                     $scope.dzongkhags = JSON.parse(window.localStorage["dzongkhags"]);
                 }

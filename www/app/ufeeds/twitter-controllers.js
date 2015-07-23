@@ -13,9 +13,7 @@ angular.module('mpoweryouth.twitter-controllers', [])
 	$scope.showHomeTimeline = function() {
 	    TwitterREST.sync().then(function(tweets){
 		$ionicLoading.hide();
-        console.log(tweets.statuses);
         $scope.tweets = tweets.statuses;
-        console.log(tweets.statuses);
         window.localStorage["twitterFeeds"] = JSON.stringify(tweets);
 	  })
 	}

@@ -113,7 +113,7 @@ angular.module('mpoweryouth.twitter-services', [])
                     'Authorization': 'Bearer '+authorization.access_token,
                     'Content-Type': 'application/json'
                 },
-                cache:true
+                cache:false
             };
             // make request with the token
             $http(req1).

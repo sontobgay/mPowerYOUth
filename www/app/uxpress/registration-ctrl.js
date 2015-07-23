@@ -42,13 +42,11 @@
         $http.get(link)
             .success(function(data) {
                 $ionicLoading.hide();
-                console.log(data);
                 $scope.dzongkhags = data;
                 window.localStorage["getdzongkhags"] = JSON.stringify(data);
             })
             .error(function(data) {
                 $ionicLoading.hide();
-                console.log("ERROR: " + data);
                 if(window.localStorage["getdzongkhags"] !== undefined) {
                     $scope.dzongkhags = JSON.parse(window.localStorage["getdzongkhags"]);
                 }
@@ -68,13 +66,11 @@
         $http.get(link)
             .success(function(data) {
                 $ionicLoading.hide();
-                console.log(data);
                 $scope.issues = data;
                 window.localStorage["getissues"] = JSON.stringify(data);
             })
             .error(function(data) {
                 $ionicLoading.hide();
-                console.log("ERROR: " + data);
                 if(window.localStorage["getissues"] !== undefined) {
                     $scope.issues = JSON.parse(window.localStorage["getissues"]);
                 }

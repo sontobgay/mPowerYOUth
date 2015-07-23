@@ -6,25 +6,15 @@ angular.module('mpoweryouth').controller('YouthCentersCtrl', function($scope, $s
         template: '<i class="fa fa-spinner fa-spin"></i> Loading Youth Centers'
     });
 
-    // console.log($routeParams.dzongkhagId);
-
-    // $http.get(link).then(function (resYouthCenters){
-    //     $ionicLoading.hide();
-    //     $scope.youthcenters = resYouthCenters.data;
-    //     console.log($scope.youthcenters);
-    // });
-
     $scope.init = function() {
         $http.get(link)
             .success(function(data) {
                 $ionicLoading.hide();
-                console.log(data);
                 $scope.youthcenters = data;
                 window.localStorage["youthcenters"] = JSON.stringify(data);
             })
             .error(function(data) {
                 $ionicLoading.hide();
-                console.log("ERROR: " + data);
                 if(window.localStorage["youthcenters"] !== undefined) {
                     $scope.youthcenters = JSON.parse(window.localStorage["youthcenters"]);
                 }

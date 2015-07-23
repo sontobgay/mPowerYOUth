@@ -12,13 +12,11 @@ var app = angular.module('mpoweryouth');
         $http.get("http://ajax.googleapis.com/ajax/services/feed/load", { params: { "v": "1.0", "q": "http://www.bhutanyouth.org/feed","num":"10" } })
             .success(function(data) {
                 $ionicLoading.hide();
-                console.log(data);
                 $scope.entries = data.responseData.feed.entries;
                 window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
             })
             .error(function(data) {
                 $ionicLoading.hide();
-                console.log("ERROR: " + data);
                 if(window.localStorage["entries"] !== undefined) {
                     $scope.entries = JSON.parse(window.localStorage["entries"]);
                 }

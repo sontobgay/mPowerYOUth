@@ -1,5 +1,5 @@
-<ion-view view-title="YOUth Twitter Feeds" ng-controller="TwitterFeedCtrl">
-  <ion-content class="has-header" ng-init="showHomeTimeline()">
+<ion-view view-title="YOUth Twitter Feeds">
+  <ion-content class="has-header" ng-init="showHomeTimeline()" ng-controller="TwitterFeedCtrl">
   <ion-refresher on-refresh="doRefresh()"></ion-refresher>
     <div class="list">
       <div ng-show="tweets.length == 0">Loading tweets...</div>

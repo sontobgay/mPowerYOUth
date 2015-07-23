@@ -37,22 +37,14 @@
             template: '<i class="fa fa-spinner fa-spin"></i> Loading dzongkhags'
         });
 
-        // $http.get(link).then(function (resDzongkhags){
-        //     $ionicLoading.hide();
-        //     $scope.dzongkhags = resDzongkhags.data;
-        //     console.log($scope.dzongkhags);
-        // });
-
         $http.get(link)
             .success(function(data) {
                 $ionicLoading.hide();
-                console.log(data);
                 $scope.dzongkhags = data;
                 window.localStorage["fetchdzongkhags"] = JSON.stringify(data);
             })
             .error(function(data) {
                 $ionicLoading.hide();
-                console.log("ERROR: " + data);
                 if(window.localStorage["fetchdzongkhags"] !== undefined) {
                     $scope.dzongkhags = JSON.parse(window.localStorage["fetchdzongkhags"]);
                 }
