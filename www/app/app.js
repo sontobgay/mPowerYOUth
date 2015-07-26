@@ -157,11 +157,20 @@ angular.module("mpoweryouth", ["ionic", "mpoweryouth.twitter-controllers", "mpow
       }
     })
 
-    .state('app.helpline-details', {
-      url: "/helpline-details",
+   .state('app.helpline-details', {
+        url: "/helpline-details",
+        views: {
+          "mainContent": {
+            templateUrl: "app/utilities/helpline-details.html"
+          }
+        }
+      })
+   
+    .state('app.useful-web-links', {
+      url: "/useful-web-links",
       views: {
         "mainContent": {
-          templateUrl: "app/utilities/helpline-details.html"
+          templateUrl: "app/utilities/useful-web-links.html"
         }
       }
     });
