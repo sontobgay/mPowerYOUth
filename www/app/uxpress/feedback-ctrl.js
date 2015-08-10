@@ -11,7 +11,7 @@
        });
        confirmPopup.then(function(res) {
          if(res) {
-            var link = 'http://119.2.120.36/mpoweryouthApi/youth_feedback.php';
+            var link = 'http://202.144.144.195/mpoweryouthApi/youth_feedback.php';
 
             $ionicLoading.show({
                 template: '<i class="fa fa-spinner fa-spin"></i> Submitting Form'

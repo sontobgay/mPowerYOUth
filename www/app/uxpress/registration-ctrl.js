@@ -14,7 +14,7 @@
                 template: '<i class="fa fa-spinner fa-spin"></i> Submitting Form'
             });
 
-            var link = 'http://119.2.120.36/mpoweryouthApi/counselling_registration.php';
+            var link = 'http://202.144.144.195/mpoweryouthApi/counselling_registration.php';
             var inputData = {
                 name : $scope.data.fullname,
                 gender  : $scope.data.gender,
@@ -41,7 +41,7 @@
 
     $scope.getDzongkhag = function(){
 
-        var link = 'http://119.2.120.36/mpoweryouthApi/dzongkhag_data.php';
+        var link = 'http://202.144.144.195/mpoweryouthApi/dzongkhag_data.php';
 
         $ionicLoading.show({
             template: '<i class="fa fa-spinner fa-spin"></i> Loading dzongkhags'
@@ -64,7 +64,7 @@
 
     $scope.getIssue = function(){
 
-        var link = 'http://119.2.120.36/mpoweryouthApi/issue_data.php';
+        var link = 'http://202.144.144.195/mpoweryouthApi/issue_data.php';
 
         $ionicLoading.show({
             template: '<i class="fa fa-spinner fa-spin"></i> Loading issues'

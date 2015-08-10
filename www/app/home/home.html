@@ -1,13 +1,29 @@
 <ion-view title="mPowerYOUth: Empowering YOUths">
  <ion-pane>
-  <ion-content class="has-header padding" ng-controller="HomeCtrl" ng-init="init()">
-  <ion-refresher on-refresh="init()"></ion-refresher>
+  <ion-content class="has-header padding" ng-controller="HomeCtrl" ng-init="init();getEvent();">
+  <ion-refresher on-refresh="init();getEvent();"></ion-refresher>
   <div class="list">
+    <div class="item item-assertive item-divider">
+     <i class="fa fa-calendar"></i> YOUth Events
+    </div>
+    <a class="item" ng-click="openEventLink('{{event.id}}')" ng-repeat="event in events">
+      <pre ng-bind-html="event.event_title" id="title"></pre>
+        <div style="font-style:italic;">
+        <b>Date:</b><span>{{event.event_date}}</span> | <b>Time:</b><span>{{event.event_time}}</span>
+      </div>
+      <pre><strong>Venue:</strong> <span>{{event.event_venue}}</span></pre>
+      <pre>{{event.event}}...<span class="positive">Read more <i class="fa fa-external-link"></i></span></pre>
+      <pre class="dark"><strong>Registration:</strong> <span>{{event.registration}}</span></pre>
+    </a>
+    <!-- RSS Feeds from www.bhutanyouth.org -->
+    <div class="item item-assertive item-divider">
+    <i class="fa fa-rss"></i> News Feed
+    </div>
     <a class="item" ng-click="openLink('{{entry.link}}')" ng-repeat="entry in entries">
       <pre ng-bind-html="entry.title" id="title"></pre>
-      <b>Published:</b><pre ng-bind-html="correctTimeString(entry.publishedDate)" id="date"></pre>
+      <b>Posted On:</b><pre ng-bind-html="correctTimeString(entry.publishedDate)" id="date"></pre>
       <pre ng-bind-html="entry.contentSnippet"></pre>
-        <div>Read more <i class="fa fa-external-link"></i></div>
+        <span class="positive">Read more <i class="fa fa-external-link"></i></span>
     </a>
   </div>
  </ion-content>

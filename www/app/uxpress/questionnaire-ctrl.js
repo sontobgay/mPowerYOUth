@@ -11,7 +11,7 @@
        });
        confirmPopup.then(function(res) {
          if(res) {
-               var link = 'http://119.2.120.36/mpoweryouthApi/youth_mind_assessment.php';
+               var link = 'http://202.144.144.195/mpoweryouthApi/youth_mind_assessment.php';
 
                 $ionicLoading.show({
                     template: '<i class="fa fa-spinner fa-spin"></i> Submitting Form'
@@ -42,7 +42,7 @@
     };
 
     $scope.getDzongkhag = function(){
-        var link = 'http://119.2.120.36/mpoweryouthApi/dzongkhag_data.php';
+        var link = 'http://202.144.144.195/mpoweryouthApi/dzongkhag_data.php';
 
         $ionicLoading.show({
             template: '<i class="fa fa-spinner fa-spin"></i> Loading dzongkhags'
